@@ -4,49 +4,36 @@ using UnityEngine;
 
 public class RaycastCam : MonoBehaviour
 {
-    Ray ray;
-    RaycastHit Hit;
+Ray m_ray;
+    RaycastHit m_rayHit;
 
-    Camera cam;
+    Camera m_cam;
 
-    [SerializeField]
-    Transform ringPrefab;
-
-    Vector3 LastPos;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        cam = transform.GetComponent<Camera>();
+        m_cam = transform.GetComponent<Camera>();    
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() 
     {
         if(Input.GetMouseButton(0))
         {
-            DeformMesh();
-        }
+            deformPlayPlane();
+        }    
     }
 
-    void DeformMesh()
+    void deformPlayPlane()
     {
-        if ((LastPos - Input.mousePosition).sqrMagnitude > 2)
+        m_ray = m_cam.ScreenPointToRay(Input.mousePosition);
+
+        if(Physics.Raycast(m_ray, out m_rayHit))
         {
-            ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out Hit))
+            if(m_rayHit.transform.tag == "PlayMesh")
             {
-                // Deform mesh
-
-                DeformPlane deformPlane = Hit.transform.GetComponent<DeformPlane>();
-                if (deformPlane)
-                {
-                    deformPlane.DeformThisPlane(Hit.point);
-
-                    Instantiate(ringPrefab, new Vector3(Hit.point.x, Hit.point.y, Hit.point.z + 0.11f), Quaternion.Euler(-90, 0, 0));
-                }
+                DeformPlane sPlaneDeformer = m_rayHit.transform.GetComponent<DeformPlane>();
+                sPlaneDeformer.DeformPlayMesh(m_rayHit.point);
             }
-
-            LastPos = Input.mousePosition;
         }
     }
 }

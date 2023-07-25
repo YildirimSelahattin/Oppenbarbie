@@ -4,41 +4,46 @@ using UnityEngine;
 
 public class DeformPlane : MonoBehaviour
 {
-    MeshFilter meshFilter;
+    [SerializeField] float deformRadius;
+    [SerializeField] float deformPower;
 
-    Mesh PlaneMesh;
+    MeshFilter m_meshFilter;
+    MeshCollider m_meshCollider;
 
-    Vector3[] verts;
+    Mesh playMesh;
+    Vector3[] m_vertices;
 
-    [SerializeField]
-    float Radius;
-
-    [SerializeField]
-    float Power;
-
+    // Start is called before the first frame update
     void Start()
     {
-        meshFilter = GetComponent<MeshFilter>();
+        m_meshFilter = GetComponent<MeshFilter>();
+        m_meshCollider = GetComponent<MeshCollider>();
 
-        PlaneMesh = meshFilter.mesh;
+        playMesh = m_meshFilter.mesh;
+        m_vertices = playMesh.vertices;
 
-        verts = PlaneMesh.vertices;
+        StartCoroutine(Delay());
     }
 
-    public void DeformThisPlane(Vector3 PositionToDeform)
+    public void DeformPlayMesh(Vector3 deformPos)
     {
-        PositionToDeform = transform.InverseTransformPoint( PositionToDeform );
+        deformPos = transform.InverseTransformPoint(deformPos);
 
-        for (int i = 0; i < verts.Length; i++)
+        for(int i = 0; i < m_vertices.Length; i++)
         {
-            float dist = (verts[i] - PositionToDeform).sqrMagnitude;
-
-            if(dist < Radius)
+            float dist = (m_vertices[i] - deformPos).sqrMagnitude;
+            if(dist < deformRadius)
             {
-                verts[i] -= Vector3.right * Power;  
+                m_vertices[i] -= Vector3.back * deformPower;
             }
         }
+        playMesh.vertices = m_vertices;
+        m_meshCollider.sharedMesh = playMesh;
+    }
 
-        PlaneMesh.vertices = verts;
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(6f);
+        deformPower = 10;
     }
 }

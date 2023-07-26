@@ -19,7 +19,6 @@ public class RocketController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        gameObject.transform.DOLocalRotate(new Vector3(0, 360, 0), 5f, RotateMode.FastBeyond360).SetLoops(-1).SetEase(Ease.Linear);
     }
 
     private void Update()

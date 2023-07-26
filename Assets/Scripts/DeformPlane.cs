@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class DeformPlane : MonoBehaviour
 {
+    public static DeformPlane Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
     [SerializeField] float deformRadius;
     [SerializeField] float deformPower;
 
@@ -27,10 +37,10 @@ public class DeformPlane : MonoBehaviour
     {
         deformPos = transform.InverseTransformPoint(deformPos);
 
-        for(int i = 0; i < m_vertices.Length; i++)
+        for (int i = 0; i < m_vertices.Length; i++)
         {
             float dist = (m_vertices[i] - deformPos).sqrMagnitude;
-            if(dist < deformRadius)
+            if (dist < deformRadius)
             {
                 m_vertices[i] -= Vector3.back * deformPower;
             }

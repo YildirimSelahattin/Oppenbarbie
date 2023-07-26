@@ -15,14 +15,15 @@ public class DeformBall : MonoBehaviour
             Vector3 collisionPoint = collision.contacts[0].point;
             deformPlane.DeformPlayMesh(collisionPoint);
 
-            //StartCoroutine(Delay(gameObject));
+            StartCoroutine(DelayDrill(gameObject));
         }
     }
 
-    IEnumerator Delay(GameObject item)
+    IEnumerator DelayDrill(GameObject item)
     {
         item.GetComponent<Collider>().enabled = false;
         item.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(.5f);
         gameObject.transform.GetChild(1).gameObject.SetActive(true);
         yield return new WaitForSeconds(.5f);
         Destroy(item);

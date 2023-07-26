@@ -21,8 +21,6 @@ public class DeformPlane : MonoBehaviour
 
         playMesh = m_meshFilter.mesh;
         m_vertices = playMesh.vertices;
-
-        StartCoroutine(Delay());
     }
 
     public void DeformPlayMesh(Vector3 deformPos)
@@ -39,12 +37,5 @@ public class DeformPlane : MonoBehaviour
         }
         playMesh.vertices = m_vertices;
         m_meshCollider.sharedMesh = playMesh;
-    }
-
-    IEnumerator Delay()
-    {
-        yield return new WaitForSeconds(6f);
-        deformPower = 3;
-        deformRadius = .3f;
     }
 }

@@ -15,7 +15,7 @@ public class DeformBall : MonoBehaviour
             Vector3 collisionPoint = collision.contacts[0].point;
             deformPlane.DeformPlayMesh(collisionPoint);
 
-            StartCoroutine(Delay(gameObject));
+            //StartCoroutine(Delay(gameObject));
         }
     }
 

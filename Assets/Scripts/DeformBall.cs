@@ -21,7 +21,10 @@ public class DeformBall : MonoBehaviour
 
     IEnumerator Delay(GameObject item)
     {
-        yield return new WaitForSeconds(0.3f);
+        item.GetComponent<Collider>().enabled = false;
+        item.transform.GetChild(0).GetComponent<Collider>().enabled = false;
+        gameObject.transform.GetChild(1).gameObject.SetActive(true);
+        yield return new WaitForSeconds(.5f);
         Destroy(item);
     }
 }

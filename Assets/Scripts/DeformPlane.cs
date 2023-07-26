@@ -44,6 +44,7 @@ public class DeformPlane : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(6f);
-        deformPower = 10;
+        deformPower = 3;
+        deformRadius = .3f;
     }
 }

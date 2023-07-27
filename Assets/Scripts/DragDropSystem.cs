@@ -66,7 +66,6 @@ public class DragDropSystem : MonoBehaviour
                 }
             }
 
-//Prefab'ın üzerinde kontrol et
             if (touch.phase == TouchPhase.Ended)
             {
                 if (touchedObject != null)

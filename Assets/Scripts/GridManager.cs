@@ -6,6 +6,7 @@ public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
     public Button addPartBtn;
+    public Button addLevelBtn; //
     public List<GameObject> Nozzles;
     public List<GameObject> Wings;
     public List<GameObject> Heads;
@@ -21,6 +22,7 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         addPartBtn.onClick.AddListener(AddPart);
+        addLevelBtn.onClick.AddListener(AddLevel);
     }
 
     public void AddPart()
@@ -38,5 +40,10 @@ public class GridManager : MonoBehaviour
         {
             GridSystem.Instance.AddPart(Nozzles[GameDataManager.Instance.currentLevel-1]);
         }
+    }
+
+    public void AddLevel()
+    {
+        GameDataManager.Instance.currentLevel++;
     }
 }

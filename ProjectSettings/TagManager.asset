@@ -9,6 +9,7 @@ TagManager:
   - Nozzle
   - Wing
   - GridCell
+  - DeleteCell
   layers:
   - Default
   - TransparentFX

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partType: 0
-  levelIndex: 2
+  levelIndex: 3
   gridToSnap: {fileID: 0}
   objectToMerge: {fileID: 0}
 --- !u!1 &8248071785382010846

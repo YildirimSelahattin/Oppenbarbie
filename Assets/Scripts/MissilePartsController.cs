@@ -9,6 +9,7 @@ public class MissilePartsController : MonoBehaviour
     public int levelIndex;
     public GameObject gridToSnap;
     public GameObject objectToMerge;
+    public GameObject deleteItem;
 
     void OnTriggerEnter(Collider other)
     {
@@ -26,6 +27,11 @@ public class MissilePartsController : MonoBehaviour
             {
                 objectToMerge = other.gameObject;
             }
+        }
+
+        if (other.CompareTag("DeleteCell"))
+        {
+            deleteItem = gameObject;
         }
     }
 
@@ -46,6 +52,11 @@ public class MissilePartsController : MonoBehaviour
                 objectToMerge = null;
             }
         }
+
+        if (other.CompareTag("DeleteCell"))
+        {
+            deleteItem = null;
+        }
     }
 
     public void TouchEnded()
@@ -54,19 +65,18 @@ public class MissilePartsController : MonoBehaviour
         {
             GameObject tempParent = objectToMerge.transform.parent.gameObject;
             Destroy(objectToMerge);
-            if(gameObject.CompareTag("Head"))
+            if (gameObject.CompareTag("Head"))
             {
                 Instantiate(GridManager.Instance.Heads[levelIndex], tempParent.transform);
             }
-            if(gameObject.CompareTag("Wing"))
+            if (gameObject.CompareTag("Wing"))
             {
                 Instantiate(GridManager.Instance.Wings[levelIndex], tempParent.transform);
             }
-            if(gameObject.CompareTag("Nozzle"))
+            if (gameObject.CompareTag("Nozzle"))
             {
                 Instantiate(GridManager.Instance.Nozzles[levelIndex], tempParent.transform);
             }
-            
             Destroy(gameObject);
         }
         else
@@ -75,6 +85,10 @@ public class MissilePartsController : MonoBehaviour
             {
                 transform.parent = gridToSnap.transform;
                 transform.localPosition = new Vector3(0, 1.2f, 0);
+            }
+            else if(deleteItem != null)
+            {
+                Destroy(deleteItem);
             }
             else
             {

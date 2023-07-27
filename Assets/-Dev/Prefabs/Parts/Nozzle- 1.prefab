@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 8189072744931084394}
   - component: {fileID: 5987348785339903215}
   - component: {fileID: 2450146104684807892}
-  - component: {fileID: -6981176387641018483}
   - component: {fileID: 4581210337609293992}
+  - component: {fileID: 4027031509695746041}
   m_Layer: 6
-  m_Name: Head 2
-  m_TagString: Head
+  m_Name: Nozzle- 1
+  m_TagString: Nozzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,22 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-6981176387641018483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683753171965648566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cda2191c33a2d904d84ac4ce60c39aca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partType: 0
-  levelIndex: 2
-  gridToSnap: {fileID: 0}
-  objectToMerge: {fileID: 0}
 --- !u!54 &4581210337609293992
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,3 +115,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4027031509695746041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683753171965648566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda2191c33a2d904d84ac4ce60c39aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partType: 0
+  levelIndex: 1
+  gridToSnap: {fileID: 0}
+  objectToMerge: {fileID: 0}

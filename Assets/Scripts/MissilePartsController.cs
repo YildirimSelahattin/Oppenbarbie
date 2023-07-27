@@ -6,7 +6,7 @@ public class MissilePartsController : MonoBehaviour
 {
     public enum PartType { head, wing, Nozzle };
     public PartType partType = new PartType();
-    public int levelIndex = 1;
+    public int levelIndex;
     public GameObject gridToSnap;
     public GameObject objectToMerge;
 
@@ -54,7 +54,19 @@ public class MissilePartsController : MonoBehaviour
         {
             GameObject tempParent = objectToMerge.transform.parent.gameObject;
             Destroy(objectToMerge);
-            Instantiate(GridManager.Instance.part[3], tempParent.transform);
+            if(gameObject.CompareTag("Head"))
+            {
+                Instantiate(GridManager.Instance.Heads[levelIndex], tempParent.transform);
+            }
+            if(gameObject.CompareTag("Wing"))
+            {
+                Instantiate(GridManager.Instance.Wings[levelIndex], tempParent.transform);
+            }
+            if(gameObject.CompareTag("Nozzle"))
+            {
+                Instantiate(GridManager.Instance.Nozzles[levelIndex], tempParent.transform);
+            }
+            
             Destroy(gameObject);
         }
         else

@@ -34995,6 +34995,62 @@ Transform:
   m_Father: {fileID: 324492115}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623670152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623670154}
+  - component: {fileID: 623670153}
+  m_Layer: 0
+  m_Name: GameDataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &623670153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623670152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86280db83d8984a4f8fd42e400b53922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incomePer: 1
+  currentLevel: 0
+  highestLevel: 0
+  uiClickSound: {fileID: 0}
+  sauceSound: {fileID: 0}
+  goldSound: {fileID: 0}
+  iceCreamShot: {fileID: 0}
+  splatSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  playSound: 0
+  playMusic: 0
+  playVibrate: 0
+--- !u!4 &623670154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623670152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.697214, y: 3.6346674, z: 4.353526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &627353297
 GameObject:
   m_ObjectHideFlags: 0
@@ -35210,15 +35266,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   addPartBtn: {fileID: 627353299}
-  wingBtn: {fileID: 1227044325}
-  drillHeadBtn: {fileID: 1331945302}
-  nozzleRBtn: {fileID: 1356063506}
-  nozzleLBtn: {fileID: 2082093678}
-  part:
-  - {fileID: 1683753171965648566, guid: fa3e6dba9807e88489893008993aad9b, type: 3}
+  Nozzles:
   - {fileID: 1683753171965648566, guid: 527640615cb8cb04e9eaa06712c9630c, type: 3}
+  - {fileID: 1683753171965648566, guid: c4b7072a702e53046ab62d7f833049ea, type: 3}
+  Wings:
   - {fileID: 1683753171965648566, guid: 018a6e4b43ecdd64f874ddd67e0a4809, type: 3}
-  - {fileID: 1683753171965648566, guid: cb1a91257de9e754e8faaadef46727f4, type: 3}
+  - {fileID: 1683753171965648566, guid: 0f977d5db13655244a6df813f91f5413, type: 3}
+  Heads:
+  - {fileID: 1683753171965648566, guid: fa3e6dba9807e88489893008993aad9b, type: 3}
+  - {fileID: 1683753171965648566, guid: d6caa7e859192dc4cb80eba3ee457d2a, type: 3}
 --- !u!1 &826123811
 GameObject:
   m_ObjectHideFlags: 0
@@ -36189,7 +36245,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30492
+  m_Name: pb_Mesh27152
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

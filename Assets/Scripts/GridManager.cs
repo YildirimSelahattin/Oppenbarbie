@@ -6,13 +6,11 @@ public class GridManager : MonoBehaviour
 {
     public static GridManager Instance;
     public Button addPartBtn;
-    public Button wingBtn;
-    public Button drillHeadBtn;
-    public Button nozzleRBtn;
-    public Button nozzleLBtn;
-    public List<GameObject> part;
+    public List<GameObject> Nozzles;
+    public List<GameObject> Wings;
+    public List<GameObject> Heads;
 
-        void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
@@ -22,41 +20,23 @@ public class GridManager : MonoBehaviour
 
     void Start()
     {
-        wingBtn.onClick.AddListener(AddWing);
-        drillHeadBtn.onClick.AddListener(AddNozzleL);
-        nozzleRBtn.onClick.AddListener(AddNozzleR);
-        nozzleLBtn.onClick.AddListener(AddDrillHead);
         addPartBtn.onClick.AddListener(AddPart);
-    }
-
-    public void AddWing()
-    {
-        GameObject wing = Instantiate(BombData.Instance.Wings[0], BombData.Instance.WingParent.transform);
-    }
-
-    public void AddNozzleL()
-    {
-        GameObject wing = Instantiate(BombData.Instance.Nozzles[0], BombData.Instance.NozzleLParent.transform);
-    }
-
-    public void AddNozzleR()
-    {
-        GameObject wing = Instantiate(BombData.Instance.Nozzles[1], BombData.Instance.NozzleRParent.transform);
-    }
-
-    public void AddHead()
-    {
-        GameObject wing = Instantiate(BombData.Instance.Wings[0], BombData.Instance.WingParent.transform);
-    }
-
-    public void AddDrillHead()
-    {
-        GameObject wing = Instantiate(BombData.Instance.DrillWarHeads[0], BombData.Instance.HeadParent.transform);
     }
 
     public void AddPart()
     {
-        int rnd = Random.Range(0,part.Count);
-        GridSystem.Instance.AddPart(part[rnd]);
+        int rnd = Random.Range(0, 3);
+        if (rnd == 0)
+        {
+            GridSystem.Instance.AddPart(Heads[GameDataManager.Instance.currentLevel-1]);
+        }
+        else if (rnd == 1)
+        {
+            GridSystem.Instance.AddPart(Wings[GameDataManager.Instance.currentLevel-1]);
+        }
+        else if(rnd == 2)
+        {
+            GridSystem.Instance.AddPart(Nozzles[GameDataManager.Instance.currentLevel-1]);
+        }
     }
 }

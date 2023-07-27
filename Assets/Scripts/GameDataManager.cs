@@ -7,8 +7,8 @@ public class GameDataManager : MonoBehaviour
     public static GameDataManager Instance;
     float totalMoney;
     public float incomePer = 1;
-    public int currentLevel = 0;
-    public int highestLevel = 0;
+    public int currentLevel;
+    public int highestLevel;
     public AudioClip uiClickSound;
     public AudioClip sauceSound;
     public AudioClip goldSound;

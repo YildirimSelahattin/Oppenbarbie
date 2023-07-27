@@ -35218,6 +35218,7 @@ MonoBehaviour:
   - {fileID: 1683753171965648566, guid: fa3e6dba9807e88489893008993aad9b, type: 3}
   - {fileID: 1683753171965648566, guid: 527640615cb8cb04e9eaa06712c9630c, type: 3}
   - {fileID: 1683753171965648566, guid: 018a6e4b43ecdd64f874ddd67e0a4809, type: 3}
+  - {fileID: 1683753171965648566, guid: cb1a91257de9e754e8faaadef46727f4, type: 3}
 --- !u!1 &826123811
 GameObject:
   m_ObjectHideFlags: 0
@@ -35751,12 +35752,12 @@ PrefabInstance:
     - target: {fileID: 7286241951450609084, guid: 0e7fefcbf92c5d94d8fd25c25183f6ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: 7286241951450609084, guid: 0e7fefcbf92c5d94d8fd25c25183f6ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.7356
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 7286241951450609084, guid: 0e7fefcbf92c5d94d8fd25c25183f6ff,
         type: 3}

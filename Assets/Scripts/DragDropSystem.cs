@@ -44,16 +44,9 @@ public class DragDropSystem : MonoBehaviour
                     touchedObject = hit.transform.gameObject;
                     touchedObjBasePos = hit.transform.localPosition;
                     touchedObjObjBaseRot = hit.transform.rotation.eulerAngles;
-
-                    boxColliders = touchedObject.GetComponentsInChildren<BoxCollider>();
-                    foreach (BoxCollider collider in boxColliders)
-                    {
-                        collider.isTrigger = true;
-                    }
-
                     touchedObject.layer = LayerMask.NameToLayer("DraggingBegan");
-                    touchedObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-                    touchedObject.GetComponent<MeshRenderer>().material.color = Color.green;
+
+                    //touchedObject.GetComponent<MeshRenderer>().material.color = Color.green;
                 }
             }
 
@@ -78,18 +71,8 @@ public class DragDropSystem : MonoBehaviour
             {
                 if (touchedObject != null)
                 {
-                    if (isplaceable == true)
-                    {
-                        touchedObject.layer = LayerMask.NameToLayer("Draggings");
-                        touchedObject = null;
-                    }
-                    else
-                    {
-                        touchedObject.layer = LayerMask.NameToLayer("Draggings");
-                        touchedObject.transform.DOLocalMove(touchedObjBasePos, 0.2f);
-                        touchedObject.transform.DOLocalRotate(touchedObjObjBaseRot, 0.2f);
-                        touchedObject = null;
-                    }
+                    touchedObject.GetComponent<MissilePartsController>().TouchEnded();
+                    touchedObject = null;
                 }
             }
         }

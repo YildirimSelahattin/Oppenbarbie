@@ -4,12 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GridManager : MonoBehaviour
 {
+    public static GridManager Instance;
     public Button addPartBtn;
     public Button wingBtn;
     public Button drillHeadBtn;
     public Button nozzleRBtn;
     public Button nozzleLBtn;
     public List<GameObject> part;
+
+        void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {

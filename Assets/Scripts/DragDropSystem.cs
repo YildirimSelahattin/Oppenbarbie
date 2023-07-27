@@ -54,7 +54,6 @@ public class DragDropSystem : MonoBehaviour
                     touchedObject.layer = LayerMask.NameToLayer("DraggingBegan");
                     touchedObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                     touchedObject.GetComponent<MeshRenderer>().material.color = Color.green;
-
                 }
             }
 
@@ -81,46 +80,18 @@ public class DragDropSystem : MonoBehaviour
                 {
                     if (isplaceable == true)
                     {
-
-                        boxColliders = touchedObject.GetComponentsInChildren<BoxCollider>();
-                        foreach (BoxCollider collider in boxColliders)
-                        {
-                            collider.isTrigger = false;
-                        }
-
                         touchedObject.layer = LayerMask.NameToLayer("Draggings");
-                        touchedObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                        touchedObject.GetComponent<MeshRenderer>().material.color = Color.white;
-                        //StartCoroutine(Delay(touchedObject));
-
                         touchedObject = null;
                     }
                     else
                     {
                         touchedObject.layer = LayerMask.NameToLayer("Draggings");
-                        StartCoroutine(CloseTrigger(touchedObject));
-                        boxColliders = touchedObject.GetComponentsInChildren<BoxCollider>();
-                        foreach (BoxCollider collider in boxColliders)
-                        {
-                            collider.isTrigger = false;
-                        }
-                        touchedObject.GetComponent<MeshRenderer>().material.color = Color.white;
                         touchedObject.transform.DOLocalMove(touchedObjBasePos, 0.2f);
                         touchedObject.transform.DOLocalRotate(touchedObjObjBaseRot, 0.2f);
                         touchedObject = null;
                     }
                 }
             }
-        }
-    }
-
-    IEnumerator CloseTrigger(GameObject placedObject)
-    {
-        yield return new WaitForSeconds(0.2f);
-        boxColliders = placedObject.GetComponentsInChildren<BoxCollider>();
-        foreach (BoxCollider collider in boxColliders)
-        {
-            collider.isTrigger = false;
         }
     }
 }

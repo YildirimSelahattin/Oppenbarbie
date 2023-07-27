@@ -5,22 +5,26 @@ using UnityEngine.UI;
 
 public class GridSystem : MonoBehaviour
 {
-    public GameObject gridPrefab;
-    GameObject gridParent;
+    public static GridSystem Instance;
+    public GameObject cellPrefab;
+    public GameObject gridParent;
     public List<GameObject> gridList;
     public int gridHeight;
     public int gridWidth;
     public float xSize;
     public float ySize;
-    public GameObject obj;
-    public Button btn;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
-        gridParent = gameObject;
         CreateGrid();
-
-        btn.onClick.AddListener(AddPart);
     }
 
     void CreateGrid()
@@ -29,33 +33,33 @@ public class GridSystem : MonoBehaviour
         {
             for (int x = 0; x < gridWidth; x++)
             {
-                GameObject currGrid = Instantiate(gridPrefab, gridParent.transform);
+                GameObject currGrid = Instantiate(cellPrefab, gridParent.transform);
                 currGrid.transform.localPosition = new Vector3(x * xSize, 0, -y * ySize);
                 gridList.Add(currGrid);
             }
         }
     }
 
-    void AddPart()
+    public void AddPart(GameObject item)
     {
-        int rnd = Random.RandomRange(0, gridList.Count);
+        int rnd = Random.Range(0, gridList.Count);
         int baseRnd = rnd;
         while (true)
         {
             if (gridList[rnd].transform.childCount == 0)
             {
-                Instantiate(obj, gridList[rnd].transform);
+                Instantiate(item, gridList[rnd].transform);
                 break;
             }
             else
             {
                 rnd++;
-                if(rnd >= gridList.Count)
+                if (rnd >= gridList.Count)
                 {
                     rnd = 0;
                 }
 
-                if(rnd == baseRnd)
+                if (rnd == baseRnd)
                 {
                     //Butonu kapat
                     break;

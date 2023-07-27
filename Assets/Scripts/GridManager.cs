@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
     public Button drillHeadBtn;
     public Button nozzleRBtn;
     public Button nozzleLBtn;
+    public List<GameObject> part;
 
     void Start()
     {
@@ -16,7 +17,7 @@ public class GridManager : MonoBehaviour
         drillHeadBtn.onClick.AddListener(AddNozzleL);
         nozzleRBtn.onClick.AddListener(AddNozzleR);
         nozzleLBtn.onClick.AddListener(AddDrillHead);
-        //addPartBtn.onClick.AddListener(AddPart);
+        addPartBtn.onClick.AddListener(AddPart);
     }
 
     public void AddWing()
@@ -44,10 +45,9 @@ public class GridManager : MonoBehaviour
         GameObject wing = Instantiate(BombData.Instance.DrillWarHeads[0], BombData.Instance.HeadParent.transform);
     }
 
-/*
     public void AddPart()
     {
-        GameObject wing = Instantiate(BombData.Instance.DrillWarHeads[0], BombData.Instance.HeadParent.transform);
+        int rnd = Random.Range(0,part.Count);
+        GridSystem.Instance.AddPart(part[rnd]);
     }
-*/
 }

@@ -35008,7 +35008,7 @@ GameObject:
   - component: {fileID: 627353300}
   - component: {fileID: 627353299}
   m_Layer: 5
-  m_Name: Head (1)
+  m_Name: AddPartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35131,7 +35131,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817816222}
+  - component: {fileID: 817816223}
   - component: {fileID: 817816221}
+  - component: {fileID: 817816224}
   m_Layer: 0
   m_Name: PlacementSystem
   m_TagString: Untagged
@@ -35175,6 +35177,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &817816223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817816220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c07f541c3f93b42a2624f1966538ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 123574028780464710, guid: 033f0304689f7004c8c007ff5a130d63,
+    type: 3}
+  gridParent: {fileID: 2101425235}
+  gridList: []
+  gridHeight: 3
+  gridWidth: 4
+  xSize: 0.8
+  ySize: 0.8
+--- !u!114 &817816224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817816220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0284f884d021ebf4ebc1c07a0cde4052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addPartBtn: {fileID: 627353299}
+  wingBtn: {fileID: 1227044325}
+  drillHeadBtn: {fileID: 1331945302}
+  nozzleRBtn: {fileID: 1356063506}
+  nozzleLBtn: {fileID: 2082093678}
+  part:
+  - {fileID: 1683753171965648566, guid: fa3e6dba9807e88489893008993aad9b, type: 3}
+  - {fileID: 1683753171965648566, guid: 527640615cb8cb04e9eaa06712c9630c, type: 3}
+  - {fileID: 1683753171965648566, guid: 018a6e4b43ecdd64f874ddd67e0a4809, type: 3}
 --- !u!1 &826123811
 GameObject:
   m_ObjectHideFlags: 0
@@ -35318,7 +35361,6 @@ GameObject:
   - component: {fileID: 913124027}
   - component: {fileID: 913124026}
   - component: {fileID: 913124025}
-  - component: {fileID: 913124029}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -35409,23 +35451,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &913124029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913124024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0284f884d021ebf4ebc1c07a0cde4052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  addPartBtn: {fileID: 0}
-  wingBtn: {fileID: 1227044325}
-  drillHeadBtn: {fileID: 1331945302}
-  nozzleRBtn: {fileID: 1356063506}
-  nozzleLBtn: {fileID: 2082093678}
 --- !u!1 &920179839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1,
@@ -36879,7 +36904,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101425236}
-  - component: {fileID: 2101425237}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -36903,27 +36927,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -60, y: 0, z: 0}
---- !u!114 &2101425237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101425235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c07f541c3f93b42a2624f1966538ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gridPrefab: {fileID: 123574028780464710, guid: 033f0304689f7004c8c007ff5a130d63,
-    type: 3}
-  gridList: []
-  gridHeight: 3
-  gridWidth: 4
-  xSize: 0.8
-  ySize: 0.8
-  obj: {fileID: 1683753171965648566, guid: 527640615cb8cb04e9eaa06712c9630c, type: 3}
-  btn: {fileID: 627353299}
 --- !u!23 &214856587521952165
 MeshRenderer:
   m_ObjectHideFlags: 0

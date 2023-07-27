@@ -36,7 +36,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(Heads[Wings.Count]);
+                GridSystem.Instance.AddPart(Heads[Wings.Count-1]);
             }
         }
         else if (rnd == 1)
@@ -47,7 +47,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(Wings[Wings.Count]);
+                GridSystem.Instance.AddPart(Wings[Wings.Count-1]);
             }
         }
         else if (rnd == 2)
@@ -58,7 +58,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(Nozzles[Wings.Count]);
+                GridSystem.Instance.AddPart(Nozzles[Wings.Count-1]);
             }
         }
     }

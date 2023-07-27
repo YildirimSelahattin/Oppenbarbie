@@ -69,7 +69,6 @@ public class DragDropSystem : MonoBehaviour
                     {
                         Vector3 temp = touchedObject.transform.position;
                         temp = hit.point;
-                        temp.y = hit.point.y + 1;
                         touchedObject.transform.position = temp;
                     }
                 }

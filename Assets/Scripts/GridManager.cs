@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class GridManager : MonoBehaviour
 {
+    public Button addPartBtn;
     public Button wingBtn;
     public Button drillHeadBtn;
     public Button nozzleRBtn;
@@ -15,6 +16,7 @@ public class GridManager : MonoBehaviour
         drillHeadBtn.onClick.AddListener(AddNozzleL);
         nozzleRBtn.onClick.AddListener(AddNozzleR);
         nozzleLBtn.onClick.AddListener(AddDrillHead);
+        //addPartBtn.onClick.AddListener(AddPart);
     }
 
     public void AddWing()
@@ -41,4 +43,11 @@ public class GridManager : MonoBehaviour
     {
         GameObject wing = Instantiate(BombData.Instance.DrillWarHeads[0], BombData.Instance.HeadParent.transform);
     }
+
+/*
+    public void AddPart()
+    {
+        GameObject wing = Instantiate(BombData.Instance.DrillWarHeads[0], BombData.Instance.HeadParent.transform);
+    }
+*/
 }

@@ -30,15 +30,36 @@ public class GridManager : MonoBehaviour
         int rnd = Random.Range(0, 3);
         if (rnd == 0)
         {
-            GridSystem.Instance.AddPart(Heads[GameDataManager.Instance.currentLevel-1]);
+            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            {
+                GridSystem.Instance.AddPart(Heads[GameDataManager.Instance.currentLevel - 1]);
+            }
+            else
+            {
+                GridSystem.Instance.AddPart(Heads[Wings.Count]);
+            }
         }
         else if (rnd == 1)
         {
-            GridSystem.Instance.AddPart(Wings[GameDataManager.Instance.currentLevel-1]);
+            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            {
+                GridSystem.Instance.AddPart(Wings[GameDataManager.Instance.currentLevel - 1]);
+            }
+            else
+            {
+                GridSystem.Instance.AddPart(Wings[Wings.Count]);
+            }
         }
-        else if(rnd == 2)
+        else if (rnd == 2)
         {
-            GridSystem.Instance.AddPart(Nozzles[GameDataManager.Instance.currentLevel-1]);
+            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            {
+                GridSystem.Instance.AddPart(Nozzles[GameDataManager.Instance.currentLevel - 1]);
+            }
+            else
+            {
+                GridSystem.Instance.AddPart(Nozzles[Wings.Count]);
+            }
         }
     }
 

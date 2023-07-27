@@ -47,7 +47,7 @@ public class MissilePartsController : MonoBehaviour
 
         if (other.CompareTag(gameObject.tag))
         {
-            if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex)
+            if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex && levelIndex != 5)
             {
                 objectToMerge = null;
             }

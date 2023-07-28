@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RocketManager : MonoBehaviour
 {
-    public bool accelerating;
-
     public static RocketManager Instance;
+
+    public bool accelerating;
 
     private void Awake()
     {

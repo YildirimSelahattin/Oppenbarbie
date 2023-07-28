@@ -126,6 +126,7 @@ public class MissilePartsController : MonoBehaviour
                 transform.parent = attachedToMissile.transform;
                 transform.localPosition = new Vector3(0, 2.5f, 0);
                 Debug.Log(attachedToMissile.GetComponent<NozzlePosition>().nozzlePosition);
+                Debug.Log()
             }
         }
         else

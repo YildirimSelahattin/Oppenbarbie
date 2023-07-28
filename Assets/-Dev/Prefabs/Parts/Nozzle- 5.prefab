@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683753171965648566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 0.4, y: 1, z: 0.4}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4934789732436314641}
@@ -132,6 +132,8 @@ MonoBehaviour:
   levelIndex: 5
   gridToSnap: {fileID: 0}
   objectToMerge: {fileID: 0}
+  deleteItem: {fileID: 0}
+  isRotate: 0
 --- !u!1 &3640973907848267301
 GameObject:
   m_ObjectHideFlags: 0

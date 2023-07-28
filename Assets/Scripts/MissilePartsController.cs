@@ -29,9 +29,11 @@ public class MissilePartsController : MonoBehaviour
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
                 attachedToMissile = other.gameObject;
+                attachedToMissile.GetComponent<MeshRenderer>().material.DOFade(.7f, 0.1f);
             }
             else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex && levelIndex != 5)
             {
+                gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
                 objectToMerge = other.gameObject;
             }
         }
@@ -70,10 +72,12 @@ public class MissilePartsController : MonoBehaviour
         {
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
+                attachedToMissile.GetComponent<MeshRenderer>().material.DOFade(.1f, 0.1f);
                 attachedToMissile = null;
             }
             else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex)
             {
+                gameObject.GetComponent<MeshRenderer>().material.color = DragDropSystem.Instance.touchedObjBaseColor;
                 objectToMerge = null;
             }
         }

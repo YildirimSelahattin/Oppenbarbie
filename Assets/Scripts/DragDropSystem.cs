@@ -19,6 +19,7 @@ public class DragDropSystem : MonoBehaviour
     Vector3 previousPosition;
     public bool isplaceable = true;
     private BoxCollider[] boxColliders;
+    public Color touchedObjBaseColor;
 
     void Awake()
     {
@@ -45,8 +46,7 @@ public class DragDropSystem : MonoBehaviour
                     touchedObjBasePos = hit.transform.localPosition;
                     touchedObjObjBaseRot = hit.transform.rotation.eulerAngles;
                     touchedObject.layer = LayerMask.NameToLayer("DraggingBegan");
-
-                    //touchedObject.GetComponent<MeshRenderer>().material.color = Color.green;
+                    touchedObjBaseColor = touchedObject.GetComponent<MeshRenderer>().material.color;
                 }
             }
 

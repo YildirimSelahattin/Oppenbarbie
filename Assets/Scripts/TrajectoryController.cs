@@ -9,9 +9,12 @@ public class TrajectoryController : MonoBehaviour
 
     public SpriteShapeController spriteShapeController;
 
-    public Vector3[] positions;
+    public Vector3[] trajectories;
 
-    public int posInt;
+    public int trajLv;
+
+    public int trajDir;
+
 
     private void Awake()
     {
@@ -29,7 +32,7 @@ public class TrajectoryController : MonoBehaviour
     public void SetSpline()
     {
         Spline spline = spriteShapeController.spline;
-        spline.SetPosition(2, new Vector3(positions[posInt].x, positions[posInt].y, 0));
+        spline.SetPosition(2, new Vector3(trajDir * trajectories[trajLv].x, trajDir * trajectories[trajLv].y, 0));
         Debug.Log(spline.GetPointCount());
         Debug.Log(spline);
         Debug.Log("sda");

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayMesh
+  - Head
+  - Nozzle
+  - Wing
+  - GridCell
+  - DeleteCell
+  - RotatePart
   layers:
   - Default
   - TransparentFX
@@ -12,10 +18,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Draggings
+  - DraggingBegan
+  - DragLayer
+  - NonePhysics
   - 
   - 
   - 

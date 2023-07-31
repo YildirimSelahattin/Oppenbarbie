@@ -1,83 +1,104 @@
-using System.Threading.Tasks;
-using System.Collections;
-using System;
 using UnityEngine;
-using System.Collections.Generic;
-using System.Linq;
-using DG.Tweening;
+
+
+namespace RotationScriptNameSpace
+{
+using UnityEngine;
 
 public class RocketController : MonoBehaviour
 {
-    [HideInInspector] public bool MoveByTouch, StartTheGame;
-    private Vector3 _mouseStartPos, PlayerStartPos;
-    public float RoadSpeed;
-    [SerializeField] private float SwipeSpeed;
-    private Camera mainCam;
+    [SerializeField]
+    [Tooltip("How fast object should rotate")]
+    private float rotationForce = 0.05f;
+    private GameObject rotatableObject;
+    private Collider objectCollider;
+    private bool shouldRotate = false;
+    private Vector3 lastMousePos;
+    private Vector2 mousePosDelta = new Vector2(0, 0);
 
     void Start()
     {
-        mainCam = Camera.main;
-        MoveByTouch = true;
+        Input.simulateMouseWithTouches = false;
+        lastMousePos = Input.mousePosition;
+        rotatableObject = gameObject;
+        objectCollider = rotatableObject.GetComponent<Collider>();
     }
 
     void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            MoveByTouch = true;
-            StartTheGame = true;
-
-            Plane newPlan = new Plane(Vector3.forward, 0f);
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (newPlan.Raycast(ray, out var distance))
-            {
-                _mouseStartPos = ray.GetPoint(distance);
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            MoveByTouch = false;
-            transform.DOKill();
-        }
-
-        if (MoveByTouch && StartTheGame)
-        {
-            var plane = new Plane(Vector3.forward, 0f);
-
-            float distance;
-
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (plane.Raycast(ray, out distance))
-            {
-                Vector3 mousePos = ray.GetPoint(distance);
-                Vector3 desirePos = mousePos - _mouseStartPos;
-                Vector3 move = transform.position + desirePos;
-
-                move.x = Mathf.Clamp(move.x, -2.2f, 2.2f);
-                move.z = -7f;
-
-                Quaternion targetRotation = Quaternion.LookRotation(move - transform.position, Vector3.up);
-
-                float step = SwipeSpeed * Time.deltaTime;
-                Quaternion newRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, step);
-
-                Vector3 newEulerAngles = newRotation.eulerAngles;
-                newEulerAngles.x = 180;
-                newEulerAngles.y = 0;
-                newEulerAngles.z = Mathf.Clamp(newEulerAngles.z, -60, 60);
-
-                newRotation = Quaternion.Euler(newEulerAngles);
-
-                transform.rotation = newRotation;
-            }
-        }
-
-        if (StartTheGame)
-        {
-            transform.Translate(Vector3.down * (RoadSpeed * -1 * Time.deltaTime));
-        }
+    {   
+        UpdateMousePosDelta();
+        checkTouchOnCollider();
+        CheckSwipesRotation();
     }
+
+    void CheckSwipesRotation()  // CHECK SWIPES
+    {
+        if(!shouldRotate) return;
+        float angle = -rotationForce * GetSwipeLength();
+        Vector3 axis = GetSwipeAxisPerp();
+        Vector3 centrePoint = rotatableObject.transform.position;
+
+        rotatableObject.transform.RotateAround(centrePoint, axis, angle);
+    }
+
+    Vector3 GetSwipeAxisPerp()  // GETTING AXIS TO ROTATE AROUND
+    {
+        Vector2 dir;
+        if(Input.GetMouseButton(0))
+        {
+            dir = GetMousePosDelta().normalized;
+            return new Vector3(-dir.y, dir.x, 0);
+        }
+        if(Input.touchCount == 0) return new Vector3(0, 0, 0);
+        Touch touch = Input.GetTouch(0);
+        dir = touch.deltaPosition.normalized;
+        return new Vector3(-dir.y, dir.x, 0);
+    }
+
+    float GetSwipeLength()  //SWIPE VECTOR MAGNITUDE
+    {
+        if(Input.GetMouseButton(0)) return GetMousePosDelta().magnitude;  // MOUSE CHECK
+        if(Input.touchCount == 0) return 0;
+        Touch touch = Input.GetTouch(0);
+        return touch.deltaPosition.magnitude;
+    }
+
+    void checkTouchOnCollider()  // CHECK IF TOUCH IS ON OBJECT'S COLLIDER
+    {
+        Ray ray;
+        RaycastHit hit;
+        if(Input.GetMouseButtonUp(0))
+        {
+            shouldRotate = false;
+            return;
+        }
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if(objectCollider.Raycast(ray, out hit, Mathf.Infinity) && Input.GetMouseButtonDown(0)) shouldRotate = true;
+            
+        if(Input.touchCount == 0) return;
+        Touch touch = Input.GetTouch(0);
+        if(touch.phase == TouchPhase.Ended)
+        {
+            shouldRotate = false;
+            return;
+        }
+        ray = Camera.main.ScreenPointToRay(touch.position);
+
+        if(objectCollider.Raycast(ray, out hit, Mathf.Infinity) && touch.phase == TouchPhase.Began) shouldRotate = true; 
+    }
+
+    Vector2 GetMousePosDelta()
+    {
+        return mousePosDelta;
+    }
+
+    void UpdateMousePosDelta()  // UPDATING MOUSE POSITION DELTA
+    {
+        mousePosDelta = Input.mousePosition - lastMousePos;
+        lastMousePos = Input.mousePosition;
+    }
+
+}
+
 }

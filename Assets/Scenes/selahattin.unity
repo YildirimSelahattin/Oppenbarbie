@@ -34514,8 +34514,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 324492115}
-  m_Follow: {fileID: 324492115}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -34541,8 +34541,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311177153}
-  m_LocalRotation: {x: -0.109116785, y: 1e-45, z: -0, w: 0.994029}
-  m_LocalPosition: {x: -0.074444056, y: 7.2200003, z: -9.39}
+  m_LocalRotation: {x: -0.10911677, y: 0, z: 0, w: 0.994029}
+  m_LocalPosition: {x: 0, y: 5.09, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34661,7 +34661,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324492114}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34674,7 +34674,7 @@ Transform:
   - {fileID: 1043902177}
   m_Father: {fileID: 975252840}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &324492116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34682,15 +34682,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324492114}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveByTouch: 0
-  StartTheGame: 0
-  RoadSpeed: 1
-  SwipeSpeed: 1
+  rotationForce: 0.05
 --- !u!114 &324492117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34800,8 +34797,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: -0.109116785, y: 1e-45, z: 0, w: 0.994029}
-  m_LocalPosition: {x: -0.074444056, y: 7.2200003, z: -9.39}
+  m_LocalRotation: {x: -0.10911677, y: 0, z: 0, w: 0.994029}
+  m_LocalPosition: {x: 0, y: 5.09, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35734,10 +35731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveByTouch: 0
-  StartTheGame: 0
-  RoadSpeed: 0
-  SwipeSpeed: 0
+  rotationForce: 0.05
 --- !u!4 &826123815
 Transform:
   m_ObjectHideFlags: 0
@@ -35922,6 +35916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 975252840}
+  - component: {fileID: 975252841}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -35936,8 +35931,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975252839}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.074444056, y: 9.22, z: -0.39}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 9.43, z: -2.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35945,7 +35940,20 @@ Transform:
   - {fileID: 110729084}
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &975252841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975252839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationForce: 0.05
 --- !u!1 &1035424121
 GameObject:
   m_ObjectHideFlags: 0
@@ -35958,7 +35966,7 @@ GameObject:
   - component: {fileID: 1035424124}
   - component: {fileID: 1035424123}
   - component: {fileID: 1035424126}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36986,10 +36994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveByTouch: 0
-  StartTheGame: 0
-  RoadSpeed: 0
-  SwipeSpeed: 0
+  rotationForce: 0.05
 --- !u!54 &1600968201
 Rigidbody:
   m_ObjectHideFlags: 0

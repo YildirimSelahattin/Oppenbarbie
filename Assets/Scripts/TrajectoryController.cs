@@ -15,6 +15,8 @@ public class TrajectoryController : MonoBehaviour
 
     public int trajDir;
 
+    public int nozzleBalance;
+
 
     private void Awake()
     {
@@ -24,19 +26,38 @@ public class TrajectoryController : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void Start()
     {
-        SetSpline();
+        SetSpline(1, 0);
     }
 
-    public void SetSpline()
+    public void Update()
+    {
+    }
+
+    public void SetSpline(int trajDir, int trajLv)
     {
         Spline spline = spriteShapeController.spline;
-        spline.SetPosition(2, new Vector3(trajDir * trajectories[trajLv].x, trajDir * trajectories[trajLv].y, 0));
-        Debug.Log(spline.GetPointCount());
-        Debug.Log(spline);
-        Debug.Log("sda");
+        spline.SetPosition(2, new Vector3(trajDir * trajectories[trajLv].x, trajectories[trajLv].y, 0));
 
         spriteShapeController.RefreshSpriteShape();
     }
+
+
+    public void CalculateNozzlesBalance(string nozzlePosition, int weight)
+    {
+        if (nozzlePosition == "Right")
+        {
+            nozzleBalance += weight;
+        }
+
+        if (nozzlePosition == "Left")
+        {
+            nozzleBalance -= weight;
+        }
+
+        Debug.Log("Balance " + nozzleBalance);
+        SetSpline( (int)Mathf.Sign(nozzleBalance), Mathf.Abs(nozzleBalance));
+    }
+
 }

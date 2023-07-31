@@ -94,6 +94,7 @@ public class MissilePartsController : MonoBehaviour
         if (objectToMerge != null)
         {
             GameObject tempParent = objectToMerge.transform.parent.gameObject;
+
             Destroy(objectToMerge);
             if (gameObject.CompareTag("Head"))
             {
@@ -106,6 +107,18 @@ public class MissilePartsController : MonoBehaviour
             if (gameObject.CompareTag("Nozzle"))
             {
                 Instantiate(GridManager.Instance.Nozzles[levelIndex], tempParent.transform);
+
+
+                if (GetComponentInParent<NozzlePosition>() != null)
+                {
+                    TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), -levelIndex);
+                }
+
+                if (objectToMerge.GetComponentInParent<NozzlePosition>() != null)
+                {
+                    TrajectoryController.Instance.CalculateNozzlesBalance(objectToMerge.GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), 1);
+                }
+
             }
             Destroy(gameObject);
         }
@@ -123,18 +136,46 @@ public class MissilePartsController : MonoBehaviour
             }
             if (gameObject.CompareTag("Nozzle"))
             {
-                transform.parent = attachedToMissile.transform;
-                transform.localPosition = new Vector3(0, 2.5f, 0);
-                Debug.Log(attachedToMissile.GetComponent<NozzlePosition>().nozzlePosition);
-                Debug.Log()
+
+                if (transform.parent.CompareTag("Nozzle"))
+                {
+
+                }
+
+                if (transform.parent != attachedToMissile.transform)
+                {
+                    if (transform.parent.CompareTag("Nozzle"))
+                    {
+                        TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), -levelIndex);
+
+                    }
+                    transform.parent = attachedToMissile.transform;
+                    transform.localPosition = new Vector3(0, 2.5f, 0);
+                    TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), levelIndex);
+                }
+
+                else
+                {
+
+                    transform.parent = attachedToMissile.transform;
+                    transform.localPosition = new Vector3(0, 2.5f, 0);
+
+                }
+
             }
         }
         else
         {
             if (gridToSnap != null)
             {
+                if (transform.parent.GetComponent<NozzlePosition>() != null)
+                {
+                    TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), -levelIndex);
+                }
+
                 transform.parent = gridToSnap.transform;
                 transform.localPosition = new Vector3(0, 2.5f, 0);
+
             }
             else if(attachedToMissile != null)
             {

@@ -177,13 +177,17 @@ public class MissilePartsController : MonoBehaviour
                 transform.localPosition = new Vector3(0, 2.5f, 0);
 
             }
-            else if(attachedToMissile != null)
+            else if (attachedToMissile != null)
             {
                 transform.parent = gridToSnap.transform;
                 transform.localPosition = new Vector3(0, 2.5f, 0);
             }
             else if (deleteItem != null)
             {
+                if (transform.parent.GetComponent<NozzlePosition>() != null)
+                {
+                    TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), -levelIndex);
+                }
                 Destroy(deleteItem);
             }
             else

@@ -34687,7 +34687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForce: 0.05
+  MoveByTouch: 0
+  StartTheGame: 0
+  RoadSpeed: 0
 --- !u!114 &324492117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35731,7 +35733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForce: 0.05
+  MoveByTouch: 0
+  StartTheGame: 0
+  RoadSpeed: 0
 --- !u!4 &826123815
 Transform:
   m_ObjectHideFlags: 0
@@ -35953,7 +35957,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForce: 0.05
+  MoveByTouch: 0
+  StartTheGame: 0
+  RoadSpeed: 0
 --- !u!1 &1035424121
 GameObject:
   m_ObjectHideFlags: 0
@@ -36994,7 +37000,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3adf669010fba2a409b3131b15d95830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationForce: 0.05
+  MoveByTouch: 0
+  StartTheGame: 0
+  RoadSpeed: 0
 --- !u!54 &1600968201
 Rigidbody:
   m_ObjectHideFlags: 0

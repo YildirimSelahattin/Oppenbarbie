@@ -1,20 +1,41 @@
+using System.Threading.Tasks;
+using System.Collections;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
+using DG.Tweening;
 
 public class RocketController : MonoBehaviour
 {
+    [HideInInspector] public bool MoveByTouch, StartTheGame;
+    private Vector3 _mouseStartPos, PlayerStartPos;
+    public float RoadSpeed;
+    Vector3 screenMyPosition;
+
     void Update()
     {
-
-        if (Input.touchCount == 1)
+        if (Input.touchCount > 0)
         {
-            Touch screenTouch = Input.GetTouch(0);
-            if (screenTouch.phase == TouchPhase.Moved)
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
             {
-                transform.Rotate(0f, screenTouch.deltaPosition.x, 0f);
+                screenMyPosition = Input.GetTouch(0).position / 3f;
             }
-
+            
+            if (touch.phase == TouchPhase.Moved)
+            {
+                Vector3 myPosition = gameObject.transform.position;
+                Vector3 targetPosition = touch.position / 3f;
+                Vector3 direction = (targetPosition - screenMyPosition).normalized;
+                Vector3 tempDir = new Vector3(direction.x, -1f, 0);
+                transform.LookAt(tempDir + transform.position);
+            }
         }
 
-        transform.Translate(Vector3.back * (1 * -1 * Time.deltaTime));
+        if (true)
+        {
+            transform.Translate(Vector3.back * (RoadSpeed * -1 * Time.deltaTime));
+        }
     }
 }

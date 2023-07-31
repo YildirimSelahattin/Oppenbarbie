@@ -122,7 +122,7 @@ public class MissilePartsController : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (attachedToMissile != null)
+        else if (attachedToMissile != null && attachedToMissile.transform.childCount == 0)
         {
             if (gameObject.CompareTag("Head"))
             {
@@ -136,12 +136,6 @@ public class MissilePartsController : MonoBehaviour
             }
             if (gameObject.CompareTag("Nozzle"))
             {
-
-                if (transform.parent.CompareTag("Nozzle"))
-                {
-
-                }
-
                 if (transform.parent != attachedToMissile.transform)
                 {
                     if (transform.parent.CompareTag("Nozzle"))
@@ -153,15 +147,11 @@ public class MissilePartsController : MonoBehaviour
                     transform.localPosition = new Vector3(0, 2.5f, 0);
                     TrajectoryController.Instance.CalculateNozzlesBalance(GetComponentInParent<NozzlePosition>().nozzlePosition.ToString(), levelIndex);
                 }
-
                 else
                 {
-
                     transform.parent = attachedToMissile.transform;
                     transform.localPosition = new Vector3(0, 2.5f, 0);
-
                 }
-
             }
         }
         else
@@ -177,7 +167,7 @@ public class MissilePartsController : MonoBehaviour
                 transform.localPosition = new Vector3(0, 2.5f, 0);
 
             }
-            else if (attachedToMissile != null)
+            else if (attachedToMissile != null && attachedToMissile.transform.childCount == 0)
             {
                 transform.parent = gridToSnap.transform;
                 transform.localPosition = new Vector3(0, 2.5f, 0);

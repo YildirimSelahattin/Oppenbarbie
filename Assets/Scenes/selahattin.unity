@@ -34542,7 +34542,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311177153}
-  m_LocalRotation: {x: 0.06699116, y: 0.000000016332296, z: -0.0000000010965829, w: 0.99775356}
+  m_LocalRotation: {x: 0.066991195, y: -0.000000029080665, z: 0.0000000019525348,
+    w: 0.99775356}
   m_LocalPosition: {x: 0, y: 8, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34734,15 +34735,6 @@ MonoBehaviour:
   _thrust: 3500
   _target: {fileID: 1811443769}
   _maxAngularVelocity: 20
-  _xAxisP: 0.5
-  _xAxisI: 1
-  _xAxisD: 0.1
-  _yAxisP: 0.5
-  _yAxisI: 1
-  _yAxisD: 0.1
-  _zAxisP: 0.5
-  _zAxisI: 1
-  _zAxisD: 0.1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -34821,7 +34813,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.06699116, y: 0.000000016332296, z: -0.0000000010965829, w: 0.99775356}
+  m_LocalRotation: {x: 0.066991195, y: -0.000000029080665, z: 0.0000000019525348,
+    w: 0.99775356}
   m_LocalPosition: {x: 0, y: 8, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35995,15 +35988,6 @@ MonoBehaviour:
   _thrust: 600
   _target: {fileID: 1811443769}
   _maxAngularVelocity: 10
-  _xAxisP: 0.5
-  _xAxisI: 1
-  _xAxisD: 0.1
-  _yAxisP: 0.5
-  _yAxisI: 1
-  _yAxisD: 0.1
-  _zAxisP: 0.5
-  _zAxisI: 1
-  _zAxisD: 0.1
 --- !u!1 &1035424121
 GameObject:
   m_ObjectHideFlags: 0

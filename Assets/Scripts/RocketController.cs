@@ -20,15 +20,15 @@ public class RocketController : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Began)
             {
-                screenMyPosition = Input.GetTouch(0).position / 2f;
+                screenMyPosition = Input.GetTouch(0).position / 10f;
             }
             
             if (touch.phase == TouchPhase.Moved)
             {
                 Vector3 myPosition = gameObject.transform.position;
-                Vector3 targetPosition = touch.position / 2f;
+                Vector3 targetPosition = touch.position / 10f;
                 Vector3 direction = (targetPosition - screenMyPosition).normalized;
-                Vector3 tempDir = new Vector3(direction.x, -1f, 0);
+                Vector3 tempDir = new Vector3(direction.x, -2f, 0);
                 transform.LookAt(tempDir + transform.position);
             }
         }

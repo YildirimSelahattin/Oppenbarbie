@@ -6,7 +6,7 @@ public class MissileController : MonoBehaviour
 {
     [SerializeField]
     [Range(0, 5000)]
-    private float _thrust = 1000f;
+    private float _thrust = 10;
     [SerializeField]
     private GameObject _target = null;
     [SerializeField]
@@ -40,7 +40,7 @@ public class MissileController : MonoBehaviour
         _yAxisPIDController = new PID(_yAxisP, _yAxisI, _yAxisD);
         _zAxisPIDController = new PID(_zAxisP, _zAxisI, _zAxisD);
     }
-
+/*
     private void Update()
     {
         _xAxisPIDController.Kp = _xAxisP;
@@ -55,7 +55,7 @@ public class MissileController : MonoBehaviour
         _zAxisPIDController.Ki = _zAxisI;
         _zAxisPIDController.Kd = _zAxisD;
     }
-
+*/
     void FixedUpdate()
     {
         //Get the required rotation based on the target position - we can do this by getting the direction
@@ -63,7 +63,7 @@ public class MissileController : MonoBehaviour
         var targetDirection = transform.position - _target.transform.position;
         Vector3 rotationDirection = Vector3.RotateTowards(transform.forward, targetDirection, 360, 0.00f);
         Quaternion targetRotation = Quaternion.LookRotation(rotationDirection);
-
+/*
         //Figure out the error for each asix
         float xAngleError = Mathf.DeltaAngle(transform.rotation.eulerAngles.x, targetRotation.eulerAngles.x);
         float xTorqueCorrection = _xAxisPIDController.GetOutput(xAngleError, Time.fixedDeltaTime);
@@ -75,6 +75,9 @@ public class MissileController : MonoBehaviour
         float zTorqueCorrection = _zAxisPIDController.GetOutput(zAngleError, Time.fixedDeltaTime);
 
         _rb.AddRelativeTorque((xTorqueCorrection * Vector3.right) + (yTorqueCorrection * Vector3.up) + (zTorqueCorrection * Vector3.forward));
+        */
         _rb.AddRelativeForce((-Vector3.forward) * _thrust * Time.fixedDeltaTime);
+
+        transform.rotation = targetRotation; //
     }
 }

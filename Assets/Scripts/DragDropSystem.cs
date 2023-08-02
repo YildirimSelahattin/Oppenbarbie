@@ -62,6 +62,11 @@ public class DragDropSystem : MonoBehaviour
                         Vector3 temp = touchedObject.transform.position;
                         temp = hit.point;
                         touchedObject.transform.position = temp;
+
+                        if(touchedObject.name.Equals("DragMissile"))
+                        {
+                            Debug.LogError("asdasdasds");
+                        }
                     }
                 }
             }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,25 +10,14 @@ public class UIManager : MonoBehaviour
 
     public Transform Slots;
 
-    public RocketController RocketController;
+    public GameObject Missile;
 
     public GameObject TrajectorySprite;
 
     public GameObject BeforeLaunchPanel;
 
     public GameObject Grid;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public CinemachineVirtualCamera moveCam;
 
     public void DropBomb()
     {
@@ -39,5 +29,12 @@ public class UIManager : MonoBehaviour
         BeforeLaunchPanel.SetActive(false);
         Grid.SetActive(false);
         TrajectorySprite.SetActive(false);
+        Missile.GetComponent<MissileController>().enabled = true;
+        ChangeCamera(moveCam,20);
+    }
+
+    public void ChangeCamera(CinemachineVirtualCamera camera, int priority)
+    {
+        camera.Priority = priority;
     }
 }

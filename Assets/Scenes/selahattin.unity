@@ -34542,8 +34542,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311177153}
-  m_LocalRotation: {x: 0.066991195, y: 0.000000029080665, z: -0.0000000019525348,
-    w: 0.99775356}
+  m_LocalRotation: {x: 0.06699119, y: -0.000000020594499, z: 0.0000000013827562, w: 0.99775356}
   m_LocalPosition: {x: 0, y: 8, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34728,8 +34727,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.066991195, y: 0.000000029080665, z: -0.0000000019525348,
-    w: 0.99775356}
+  m_LocalRotation: {x: 0.06699119, y: -0.000000020594499, z: 0.0000000013827562, w: 0.99775356}
   m_LocalPosition: {x: 0, y: 8, z: -11.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34982,7 +34980,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -35015,7 +35013,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -35942,7 +35940,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1580535799172915004, guid: 187fb1464285da446ae9a3453a8abcb1, type: 3}
+  - {fileID: 2100000, guid: 32aca3d28b37a1b45956482f4b903876, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36909,7 +36907,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh43612
+  m_Name: pb_Mesh33574
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

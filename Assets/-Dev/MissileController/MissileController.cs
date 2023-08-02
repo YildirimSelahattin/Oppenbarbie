@@ -12,6 +12,8 @@ public class MissileController : MonoBehaviour
     [SerializeField]
     private float _maxAngularVelocity = 20;
     private Rigidbody _rb;
+    Vector3 aimedDirection;
+    bool stop;
 
     void Start()
     {
@@ -19,14 +21,34 @@ public class MissileController : MonoBehaviour
         _rb.maxAngularVelocity = _maxAngularVelocity;
     }
 
-    void FixedUpdate()
+
+    void Update()
     {
-        var targetDirection = transform.position - _target.transform.position;
-        Vector3 rotationDirection = Vector3.RotateTowards(transform.forward, targetDirection, 360, 0.00f);
-        Quaternion targetRotation = Quaternion.LookRotation(rotationDirection);
+        if (Input.touchCount > 0)
+        {
+            if (Input.GetTouch(0).phase == TouchPhase.Moved)
+            {
+                var targetDirection = (transform.position - _target.transform.position).normalized;
+                aimedDirection = targetDirection;
+                stop = false;
+            }
+            if (!stop)
+            {
+                if (aimedDirection.x - transform.up.x < 0)
+                {
+                    transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z - 0.05f);
 
-        _rb.AddRelativeForce((-Vector3.forward) * _thrust * Time.fixedDeltaTime);
+                }
+                if (aimedDirection.x - transform.up.x > 0)
+                {
+                    transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z + 0.05f);
+                }
+            }
+            if (aimedDirection == -transform.up)
+            {
+                stop = true;
+            }
 
-        transform.rotation = targetRotation;
+        }
     }
 }

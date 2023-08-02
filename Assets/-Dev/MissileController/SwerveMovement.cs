@@ -22,7 +22,7 @@ public class SwerveMovement : MonoBehaviour
 
         transform.localPosition = newPosition;
 
-        transform.Translate(Vector3.up * (2 * -1 * Time.deltaTime));
+       // transform.Translate(Vector3.down * (2 * Time.deltaTime));
     }
 
     private Vector3 GetLimitedLocalPosition(Vector3 position)
@@ -48,7 +48,6 @@ public class SwerveMovement : MonoBehaviour
         else if (Input.GetMouseButton(0))
         {
             inputX = (Input.mousePosition.x - _anchorPosition.x);
-            Debug.Log(inputX);
             _anchorPosition = Input.mousePosition;
         }
         return inputX;

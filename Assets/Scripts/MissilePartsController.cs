@@ -80,6 +80,10 @@ public class MissilePartsController : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material.color = DragDropSystem.Instance.touchedObjBaseColor;
                 objectToMerge = null;
             }
+            else
+            {
+                attachedToMissile.GetComponent<MeshRenderer>().material.DOKill();
+            }
         }
 
         if (other.CompareTag("DeleteCell"))

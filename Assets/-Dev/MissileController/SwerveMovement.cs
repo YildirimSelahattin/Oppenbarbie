@@ -1,15 +1,33 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class SwerveMovement : MonoBehaviour
 {
-    public float speed = 5f; // Hareket hızı
+    public static SwerveMovement Instance;
+    public float speed = 0;
+    public float startPosX;
+    public bool isStartGame;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    public void GoStartPos()
+    {
+        startPosX = TrajectoryController.Instance.nozzleBalance * -2.5f;
+        transform.DOMoveX(startPosX, 1.5f).OnComplete(() => isStartGame = true);
+    }
 
     void Update()
     {
-        transform.Translate(Vector3.down * (2 * Time.deltaTime));
+        transform.Translate(Vector3.down * (speed * Time.deltaTime));
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && isStartGame == true)
         {
             Touch touch = Input.GetTouch(0);
             float horizontalInput = touch.position.x - Screen.width / 2f;
@@ -17,4 +35,6 @@ public class SwerveMovement : MonoBehaviour
             transform.Translate(Vector3.right * -movement * speed * Time.deltaTime);
         }
     }
+
+
 }

@@ -31,6 +31,8 @@ public class UIManager : MonoBehaviour
         TrajectorySprite.SetActive(false);
         Missile.GetComponent<MissileController>().enabled = true;
         ChangeCamera(moveCam,20);
+        SwerveMovement.Instance.GoStartPos();
+        SwerveMovement.Instance.speed = 2;
     }
 
     public void ChangeCamera(CinemachineVirtualCamera camera, int priority)

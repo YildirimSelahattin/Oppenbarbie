@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NozzlePosition : MonoBehaviour
+public class MissileProperties : MonoBehaviour
 {
     public enum NozzlePos { Left, Center, Right};
     public NozzlePos nozzlePosition;
-
+    public int partLevel;
     // Start is called before the first frame update
     void Start()
     {

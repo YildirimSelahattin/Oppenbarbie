@@ -26,9 +26,9 @@ public class RocketTrailManager : MonoBehaviour
         rocketTrailMat = GetComponent<MeshRenderer>().material;
         rocketTrailMat.SetFloat("_Thrust", thrustMin);
         thrustValue = thrustMin;
-        accelerating = RocketManager.Instance.accelerating;
+        //accelerating = RocketManager.Instance.accelerating;
     }
-
+/*
     private void Update()
     {
         if (RocketManager.Instance.accelerating == true)
@@ -82,4 +82,5 @@ public class RocketTrailManager : MonoBehaviour
             rocketTrailMat.SetFloat("_Thrust", change);
         });
     }
+    */
 }

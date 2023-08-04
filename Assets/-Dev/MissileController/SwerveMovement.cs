@@ -1,66 +1,40 @@
 using System;
 using UnityEngine;
+using DG.Tweening;
 
 public class SwerveMovement : MonoBehaviour
 {
-    [SerializeField] private float maxDisplacement = 0.2f;
-    [SerializeField] private float maxPositionX = 2f;
-    private Vector2 _anchorPosition;
+    public static SwerveMovement Instance;
+    public float speed = 0;
+    public float startPosX;
+    public bool isStartGame;
 
-
-    private void Update()
+    private void Awake()
     {
-        var inputX = GetInput();
-
-        var displacementX = GetDisplacement(inputX);
-
-        displacementX = SmoothOutDisplacement(displacementX);
-        
-        var newPosition = GetNewLocalPosition(displacementX);
-
-        newPosition = GetLimitedLocalPosition(newPosition);
-
-        transform.localPosition = newPosition;
-
-        transform.Translate(Vector3.up * (2 * -1 * Time.deltaTime));
-    }
-
-    private Vector3 GetLimitedLocalPosition(Vector3 position)
-    {
-        position.x = Mathf.Clamp(position.x, -maxPositionX, maxPositionX);
-        return position;
-    }
-    private Vector3 GetNewLocalPosition(float displacementX)
-    {
-        var lastPosition = transform.localPosition;
-        var newPositionX = lastPosition.x + displacementX;
-        var newPosition = new Vector3(newPositionX, lastPosition.y, lastPosition.z);
-        return newPosition;
-    }
-    private float GetInput()
-    {
-        var inputX = 0f;
-        if (Input.GetMouseButtonDown(0))
+        if (Instance == null)
         {
-            _anchorPosition = Input.mousePosition;
+            Instance = this;
         }
+    }
 
-        else if (Input.GetMouseButton(0))
+    public void GoStartPos()
+    {
+        startPosX = TrajectoryController.Instance.nozzleBalance * -2.5f;
+        transform.DOMoveX(startPosX, 1.5f).OnComplete(() => isStartGame = true);
+    }
+
+    void Update()
+    {
+        transform.Translate(Vector3.down * (speed * Time.deltaTime));
+
+        if (Input.touchCount > 0 && isStartGame == true)
         {
-            inputX = (Input.mousePosition.x - _anchorPosition.x);
-            Debug.Log(inputX);
-            _anchorPosition = Input.mousePosition;
+            Touch touch = Input.GetTouch(0);
+            float horizontalInput = touch.position.x - Screen.width / 2f;
+            float movement = horizontalInput / (Screen.width / 2f);
+            transform.Translate(Vector3.right * -movement * speed * Time.deltaTime);
         }
-        return inputX;
     }
-    private float GetDisplacement(float inputX)
-    {
-        var displacementX = 0f;
-        displacementX = inputX * Time.deltaTime;
-        return displacementX;
-    }
-    private float SmoothOutDisplacement(float displacementX)
-    {
-        return Mathf.Clamp(displacementX, -maxDisplacement, maxDisplacement);
-    }
+
+
 }

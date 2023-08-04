@@ -38,6 +38,10 @@ public class TrajectoryController : MonoBehaviour
     public void SetSpline(int trajDir, int trajLv)
     {
         Spline spline = spriteShapeController.spline;
+        if(trajLv > 3)
+        {
+            trajLv = 3;
+        }
         spline.SetPosition(2, new Vector3(trajDir * trajectories[trajLv].x, trajectories[trajLv].y, 0));
 
         spriteShapeController.RefreshSpriteShape();

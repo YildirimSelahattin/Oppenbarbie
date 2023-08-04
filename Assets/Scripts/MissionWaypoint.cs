@@ -19,12 +19,12 @@ public class MissionWaypoint : MonoBehaviour
     {
         
         float minX = img.GetPixelAdjustedRect().width / 2;
-        float maxX = Screen.width - minX;
+        float maxX = 400f; //Screen.width - minX;
 
         float minY = img.GetPixelAdjustedRect().height / 2;
-        float maxY = Screen.height - minY;
+        float maxY = 200f; //Screen.height - minY;
 
-        Vector2 pos = Camera.main.WorldToScreenPoint(target.position);
+        Vector2 pos = new Vector2 (400f, 200f); //Camera.main.WorldToScreenPoint(target.position);
 
         if (Vector3.Dot((transform.position - target.position), transform.forward) < 0)
         {

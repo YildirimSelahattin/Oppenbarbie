@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class MissilePartsController : MonoBehaviour
 {
-    public enum PartType { head, wing, Nozzle };
+    public enum PartType { head, wingD, Nozzle, wingU };
     public PartType partType = new PartType();
     public int levelIndex;
     public GameObject gridToSnap;
@@ -27,15 +27,20 @@ public class MissilePartsController : MonoBehaviour
 
         if (other.CompareTag(gameObject.tag))
         {
+            Debug.Log("Hey");
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
+                Debug.Log("Hey1");
+
                 attachedToMissile = other.gameObject;
                 prevColor = attachedToMissile.GetComponent<MeshRenderer>().material.color;
-                attachedToMissile.GetComponent<MeshRenderer>().material.color = Color.red;
+                attachedToMissile.GetComponent<MeshRenderer>().material.color = Color.magenta;
                 
             }
             else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex && levelIndex != 5)
             {
+                Debug.Log("Hey2");
+
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
                 objectToMerge = other.gameObject;
             }
@@ -104,14 +109,6 @@ public class MissilePartsController : MonoBehaviour
             GameObject tempParent = objectToMerge.transform.parent.gameObject;
 
             Destroy(objectToMerge);
-            if (gameObject.CompareTag("Head"))
-            {
-                Instantiate(GridManager.Instance.Heads[levelIndex], tempParent.transform);
-            }
-            if (gameObject.CompareTag("Wing"))
-            {
-                Instantiate(GridManager.Instance.Wings[levelIndex], tempParent.transform);
-            }
             if (gameObject.CompareTag("Nozzle"))
             {
                 Instantiate(GridManager.Instance.Nozzles[levelIndex], tempParent.transform);
@@ -126,7 +123,24 @@ public class MissilePartsController : MonoBehaviour
                 {
                     TrajectoryController.Instance.CalculateNozzlesBalance(objectToMerge.GetComponentInParent<MissileProperties>().nozzlePosition.ToString(), 1);
                 }
+            }
 
+            else if (gameObject.CompareTag("Head"))
+            {
+                Debug.Log("Head");
+                Instantiate(GridManager.Instance.Heads[levelIndex], tempParent.transform);
+            }
+            else if (gameObject.CompareTag("WingD"))
+            {
+                Debug.Log("WingD");
+
+                Instantiate(GridManager.Instance.WingDs[levelIndex], tempParent.transform);
+            }
+            else if (gameObject.CompareTag("WingU"))
+            {
+                Debug.Log("WingU");
+
+                Instantiate(GridManager.Instance.WingUs[levelIndex], tempParent.transform);
             }
             Destroy(gameObject);
         }
@@ -208,7 +222,7 @@ public class MissilePartsController : MonoBehaviour
         }
 
         // Head or Wing Attachment Without Merge
-        else if (gameObject.CompareTag("Head") || gameObject.CompareTag("Wing"))
+        else if (gameObject.CompareTag("Head") || gameObject.CompareTag("WingD") || gameObject.CompareTag("WingU"))
         {
             AttachPart(levelIndex);
         }
@@ -229,7 +243,7 @@ public class MissilePartsController : MonoBehaviour
         }
 
         // Head or Wing Attachment With Merge
-        else if (gameObject.CompareTag("Head") || gameObject.CompareTag("Wing"))
+        else if (gameObject.CompareTag("Head") || gameObject.CompareTag("WingD") || gameObject.CompareTag("WingU"))
         {
             AttachPart(levelIndex + 1);
         }

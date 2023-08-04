@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 4581210337609293992}
   - component: {fileID: -5918714907871078045}
   m_Layer: 6
-  m_Name: Wing- 3
-  m_TagString: Wing
+  m_Name: WingU-2
+  m_TagString: WingU
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683753171965648566}
-  m_Mesh: {fileID: 7132315978407250585, guid: 2ce07b1705f945d429330c6e7c00c560, type: 3}
+  m_Mesh: {fileID: -1086325920119204068, guid: 2626fabe1c2080a4a8a301f1e6535fb4, type: 3}
 --- !u!23 &5987348785339903215
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,9 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 6899437403511043246, guid: 2ce07b1705f945d429330c6e7c00c560, type: 3}
-  - {fileID: 6131231846623436401, guid: 2ce07b1705f945d429330c6e7c00c560, type: 3}
-  - {fileID: 3899324036947486542, guid: 2ce07b1705f945d429330c6e7c00c560, type: 3}
+  - {fileID: 6131231846623436401, guid: 2626fabe1c2080a4a8a301f1e6535fb4, type: 3}
+  - {fileID: 6899437403511043246, guid: 3f78bd9828de7b546aa2fd918807bf9b, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -129,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda2191c33a2d904d84ac4ce60c39aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partType: 1
-  levelIndex: 3
+  partType: 3
+  levelIndex: 2
   gridToSnap: {fileID: 0}
   objectToMerge: {fileID: 0}
   deleteItem: {fileID: 0}

@@ -11,6 +11,10 @@ TagManager:
   - GridCell
   - DeleteCell
   - RotatePart
+  - Cube
+  - Obstacle
+  - Flashlight
+  - EndCam
   layers:
   - Default
   - TransparentFX
@@ -22,8 +26,8 @@ TagManager:
   - DraggingBegan
   - DragLayer
   - NonePhysics
-  - 
-  - 
+  - Mask
+  - Masked
   - 
   - 
   - 

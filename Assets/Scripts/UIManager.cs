@@ -2,42 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
-    public Button GoButton;
+    public static UIManager Instance;
+    public Button goButton;
+    public Transform slots;
+    public GameObject missile = null;
+    public GameObject trajectorySprite;
+    public GameObject beforeLaunchPanel;
+    public GameObject grid;
+    public GameObject restartButon;
+    public CinemachineVirtualCamera moveCam;
 
-    public Transform Slots;
-
-    public RocketController RocketController;
-
-    public GameObject TrajectorySprite;
-
-    public GameObject BeforeLaunchPanel;
-
-    public GameObject Grid;
-
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        GameManager.Instance.SpawnMissile();
+        restartButon.GetComponent<Button>().onClick.AddListener(GameManager.Instance.SpawnMissile);
     }
 
     public void DropBomb()
     {
-        foreach (Transform child in Slots.transform)
+        foreach (Transform child in slots.transform)
         {
             child.transform.GetComponent<MeshRenderer>().enabled = false;
         }
 
-        BeforeLaunchPanel.SetActive(false);
-        Grid.SetActive(false);
-        TrajectorySprite.SetActive(false);
+        beforeLaunchPanel.SetActive(false);
+        grid.SetActive(false);
+        trajectorySprite.SetActive(false);
+        missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
+        {
+            missile.transform.DOMoveZ(0, 0);
+        });
+        GameManager.Instance.ChangeCamera(moveCam, 20);
+        SwerveMovement.Instance.GoStartPos();
+        MissileController.Instance.speed = 10;
+        SwerveMovement.Instance.speed = 10;
     }
 }

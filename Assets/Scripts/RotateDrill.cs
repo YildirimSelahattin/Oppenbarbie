@@ -1,6 +1,8 @@
 using UnityEngine;
 using DG.Tweening;
-
+/*
+----
+*/
 public class RotateDrill : MonoBehaviour
 {
     public static RotateDrill Instance;
@@ -22,7 +24,7 @@ public class RotateDrill : MonoBehaviour
     {
         gameObject.transform.DOLocalRotate(new Vector3(0, 0, 360), .5f, RotateMode.FastBeyond360).SetEase(Ease.Linear).OnComplete(() =>
         {
-            GameManager.Instance.ShakeCamera(0);
+            //GameManager.Instance.ShakeCamera(0);
             Destroy(item);
         });
     }

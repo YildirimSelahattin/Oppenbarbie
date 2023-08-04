@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class MissileController : MonoBehaviour
 {
-    [SerializeField]
+    public static MissileController Instance;
     [Range(0, 5000)]
-    private float _thrust = 10;
+    public float speed = 0;
     [SerializeField]
-    private GameObject _target = null;
+    public GameObject target = null;
     [SerializeField]
     private float _maxAngularVelocity = 20;
     private Rigidbody _rb;
+    Vector3 aimedDirection;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _rb.maxAngularVelocity = _maxAngularVelocity;
+        target = Instantiate(GameManager.Instance.targetPrefab);
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        var targetDirection = transform.position - _target.transform.position;
-        Vector3 rotationDirection = Vector3.RotateTowards(transform.forward, targetDirection, 360, 0.00f);
-        Quaternion targetRotation = Quaternion.LookRotation(rotationDirection);
+        transform.Translate(Vector3.down * (speed * Time.deltaTime));
+        var targetDirection = (transform.position - target.transform.position).normalized;
+        aimedDirection = targetDirection;
 
-        _rb.AddRelativeForce((-Vector3.forward) * _thrust * Time.fixedDeltaTime);
-
-        transform.rotation = targetRotation;
+        if (aimedDirection.x - transform.up.x < 0)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z - 0.05f);
+        }
+        if (aimedDirection.x - transform.up.x > 0)
+        {
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z + 0.05f);
+        }
     }
 }

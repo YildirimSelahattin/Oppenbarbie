@@ -36,16 +36,16 @@ public class BombDeformManager : MonoBehaviour
 
     IEnumerator BasicBomb(GameObject item)
     {
-        GameManager.Instance.ShakeCamera(1);
+        //GameManager.Instance.ShakeCamera(1);
         blastEffect.SetActive(true);
         yield return new WaitForSeconds(.5f);
-        GameManager.Instance.ShakeCamera(0);
+        //GameManager.Instance.ShakeCamera(0);
         Destroy(item);
     }
 
     IEnumerator DrilBomb(GameObject item)
     {
-        GameManager.Instance.ShakeCamera(1);
+        //GameManager.Instance.ShakeCamera(1);
         yield return new WaitForSeconds(1f);
         blastEffect.SetActive(true);   
         RotateDrill.Instance.RotateInPlanet(item);

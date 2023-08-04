@@ -26,8 +26,8 @@ TagManager:
   - DraggingBegan
   - DragLayer
   - NonePhysics
-  - 
-  - 
+  - Mask
+  - Masked
   - 
   - 
   - 

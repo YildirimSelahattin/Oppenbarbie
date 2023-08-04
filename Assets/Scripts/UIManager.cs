@@ -7,37 +7,47 @@ using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
     public Button goButton;
-
     public Transform slots;
-
-    public GameObject missile;
-
+    public GameObject missile = null;
     public GameObject trajectorySprite;
-
     public GameObject beforeLaunchPanel;
-
     public GameObject grid;
+    public GameObject restartButon;
     public CinemachineVirtualCamera moveCam;
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    void Start()
+    {
+        GameManager.Instance.SpawnMissile();
+        restartButon.GetComponent<Button>().onClick.AddListener(GameManager.Instance.SpawnMissile);
+    }
 
     public void DropBomb()
     {
-        
         foreach (Transform child in slots.transform)
         {
             child.transform.GetComponent<MeshRenderer>().enabled = false;
         }
-        
+
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);
-        missile.GetComponent<MissileController>().enabled = true;
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
-            missile.transform.DOMoveZ(0,0);
+            missile.transform.DOMoveZ(0, 0);
         });
-        GameManager.Instance.ChangeCamera(moveCam,20);
+        GameManager.Instance.ChangeCamera(moveCam, 20);
         SwerveMovement.Instance.GoStartPos();
-        SwerveMovement.Instance.speed = 2;
+        MissileController.Instance.speed = 10;
+        SwerveMovement.Instance.speed = 10;
     }
 }

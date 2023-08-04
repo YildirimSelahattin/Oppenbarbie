@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.collider.tag == "Obstacle")
         {
+            UIManager.Instance.restartButon.SetActive(true);
             Vector3 furthestContactPoint = transform.position;
             float furthestDistance = 0;
             foreach (ContactPoint contact in collision.contacts)
@@ -25,6 +26,7 @@ public class Bullet : MonoBehaviour
             }
             collision.gameObject.GetComponent<MarchingCubes>().Destruction(furthestContactPoint, _radiusExplosion);
             //Instantiate(_explosionSound, transform.position, Quaternion.identity);
+            Destroy(MissileController.Instance.target);
             Destroy(gameObject);
         }
     }

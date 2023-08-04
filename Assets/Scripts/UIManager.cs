@@ -33,11 +33,6 @@ public class UIManager : MonoBehaviour
 
     public void DropBomb()
     {
-        foreach (Transform child in slots.transform)
-        {
-            child.transform.GetComponent<MeshRenderer>().enabled = false;
-        }
-
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);

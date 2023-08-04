@@ -36,7 +36,15 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("EndCam"))
         {
             GameManager.Instance.ChangeCamera(GameManager.Instance.endCam, 50);
+            StartCoroutine(DelayCam());
         }
+    }
+
+    public IEnumerator DelayCam()
+    {
+        yield return new WaitForSeconds(3);
+        GameManager.Instance.endCam.LookAt = null;
+        GameManager.Instance.endCam.Follow = null;
     }
 
     public void SetDir(Vector3 _dir)

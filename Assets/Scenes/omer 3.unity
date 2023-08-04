@@ -40414,7 +40414,7 @@ MonoBehaviour:
   - {fileID: 1683753171965648566, guid: b6c95f2625a4c234b8e1e14d4ec516d7, type: 3}
   - {fileID: 1683753171965648566, guid: d3ef8184e6a38c74bbd1d0b08e6bb30b, type: 3}
   - {fileID: 1683753171965648566, guid: 5d4b5cdf613c06548afe85cec23e4bb5, type: 3}
-  Wings:
+  WingDs:
   - {fileID: 1683753171965648566, guid: 018a6e4b43ecdd64f874ddd67e0a4809, type: 3}
   - {fileID: 1683753171965648566, guid: 0f977d5db13655244a6df813f91f5413, type: 3}
   - {fileID: 1683753171965648566, guid: 2a4901b09b8118f4ba1d3d229b685633, type: 3}
@@ -40426,6 +40426,12 @@ MonoBehaviour:
   - {fileID: 1683753171965648566, guid: d8922b55295a389438300c3401534c13, type: 3}
   - {fileID: 1683753171965648566, guid: af35d1ed9e5ca4b47b036d366a90919d, type: 3}
   - {fileID: 1683753171965648566, guid: 1c4e928207360c444a83e8c61a36c7e7, type: 3}
+  WingUs:
+  - {fileID: 1683753171965648566, guid: 26d5144c7b2bfec449ff1fb5ae0c8cec, type: 3}
+  - {fileID: 1683753171965648566, guid: d08da51b0c6eb7745b896a71520c6939, type: 3}
+  - {fileID: 1683753171965648566, guid: dd198f2a5f17bb945b3de5581dd15bd3, type: 3}
+  - {fileID: 1683753171965648566, guid: b5ff71d6d7c8b3a459d444d19b1776e9, type: 3}
+  - {fileID: 1683753171965648566, guid: 0922693220c63bc4cb583c97442938d7, type: 3}
 --- !u!1 &826123811
 GameObject:
   m_ObjectHideFlags: 0

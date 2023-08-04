@@ -28,7 +28,7 @@ public class GridManager : MonoBehaviour
 
     public void AddPart()
     {
-        int rnd = Random.Range(0, 3);
+        int rnd = Random.Range(0, 4);
         if (rnd == 0)
         {
             if (GameDataManager.Instance.currentLevel < WingDs.Count)
@@ -60,6 +60,17 @@ public class GridManager : MonoBehaviour
             else
             {
                 GridSystem.Instance.AddPart(Nozzles[WingDs.Count-1]);
+            }
+        }
+        else if (rnd == 3)
+        {
+            if (GameDataManager.Instance.currentLevel < WingDs.Count)
+            {
+                GridSystem.Instance.AddPart(WingUs[GameDataManager.Instance.currentLevel - 1]);
+            }
+            else
+            {
+                GridSystem.Instance.AddPart(WingUs[WingDs.Count - 1]);
             }
         }
     }

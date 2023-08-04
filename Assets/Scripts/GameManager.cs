@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public CinemachineVirtualCamera followCam;
+    public CinemachineVirtualCamera startCam;
+    public CinemachineVirtualCamera endCam;
 
     void Awake()
     {
@@ -22,10 +24,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ShakeCamera(float intensity)
+    public void ShakeCamera(CinemachineVirtualCamera camera, float intensity)
     {
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = followCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+    }
+
+        public void ChangeCamera(CinemachineVirtualCamera camera, int priority)
+    {
+        camera.Priority = priority;
     }
 }

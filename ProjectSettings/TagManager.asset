@@ -12,6 +12,9 @@ TagManager:
   - DeleteCell
   - RotatePart
   - Cube
+  - Obstacle
+  - Flashlight
+  - EndCam
   layers:
   - Default
   - TransparentFX

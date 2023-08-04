@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void SpawnMissile()
     {
         missile = Instantiate(missillePrefab, missileSpawnParent.transform);
-        UIManager.Instance.missile = missileSpawnParent.transform.GetChild(0).gameObject;
+        UIManager.Instance.missile = missileSpawnParent.transform.GetChild(2).gameObject;
         UIManager.Instance.slots = UIManager.Instance.missile.transform.GetChild(missile.transform.childCount - 1);
         followCam.LookAt = missile.transform;
         startCam.LookAt = missile.transform;

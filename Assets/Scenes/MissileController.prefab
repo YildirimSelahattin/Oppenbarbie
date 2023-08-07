@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 409699733884719615}
   - component: {fileID: 409699733884719612}
   - component: {fileID: 409699733884719613}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv10
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -3162,7 +3162,7 @@ GameObject:
   - component: {fileID: 6986145887122105690}
   - component: {fileID: 1220304296322494037}
   - component: {fileID: 1220304296322494034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv5
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -3980,7 +3980,7 @@ GameObject:
   - component: {fileID: 9081196094480048990}
   - component: {fileID: 1765563912012515650}
   - component: {fileID: 1765563912012515651}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv3
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -5300,13 +5300,13 @@ GameObject:
   - component: {fileID: 3496192855055474717}
   - component: {fileID: 3496192855055474714}
   - component: {fileID: 3496192855055474715}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv1
   m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5058923653475680987
 Transform:
   m_ObjectHideFlags: 0
@@ -7087,7 +7087,7 @@ GameObject:
   - component: {fileID: 1558545208118809292}
   - component: {fileID: 1558545208118809293}
   - component: {fileID: 1558545208118809290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv9
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -8787,7 +8787,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4660412357976416861}
-  - component: {fileID: 4660412357976416857}
   - component: {fileID: 1105289073848058274}
   - component: {fileID: 4660412357976416806}
   m_Layer: 0
@@ -8818,22 +8817,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4660412357976416857
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4660412357976416860}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 5
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &1105289073848058274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8991,7 +8974,7 @@ GameObject:
   - component: {fileID: 1448136774867688328}
   - component: {fileID: 1448136774867688329}
   - component: {fileID: 1448136774867688342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv6
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -10505,7 +10488,7 @@ GameObject:
   - component: {fileID: 7782744519976034827}
   - component: {fileID: 2273444676912941127}
   - component: {fileID: 2273444676912941124}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv4
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -13979,13 +13962,13 @@ GameObject:
   - component: {fileID: 7701262903229316765}
   - component: {fileID: 7701262903229316764}
   - component: {fileID: 7701262903229316763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv0
   m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7701262903229316767
 Transform:
   m_ObjectHideFlags: 0
@@ -16986,7 +16969,7 @@ GameObject:
   - component: {fileID: 8202496674198329142}
   - component: {fileID: 2447258561991986763}
   - component: {fileID: 2447258561991986760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv7
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -17214,7 +17197,7 @@ GameObject:
   - component: {fileID: 5161554385301231128}
   - component: {fileID: 1021733777481415103}
   - component: {fileID: 1021733777481415100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv2
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -17327,7 +17310,7 @@ GameObject:
   - component: {fileID: 4089997970480004763}
   - component: {fileID: 4089997970480004760}
   - component: {fileID: 4089997970480004761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: head_lv8
   m_TagString: Head
   m_Icon: {fileID: 0}

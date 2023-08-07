@@ -22,13 +22,18 @@ public class GridManager : MonoBehaviour
 
     void Start()
     {
-        addPartBtn.onClick.AddListener(AddPart);
+        addPartBtn.onClick.AddListener(delegate { AddPart(10); });
+
         addLevelBtn.onClick.AddListener(AddLevel);
     }
 
-    public void AddPart()
+    public void AddPart(int rnd)
     {
-        int rnd = Random.Range(0, 4);
+        if (rnd == 10)
+        {
+            rnd = Random.Range(0, 4);
+        }
+
         if (rnd == 0)
         {
             if (GameDataManager.Instance.currentLevel < WingDs.Count)
@@ -37,7 +42,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(Heads[WingDs.Count-1]);
+                GridSystem.Instance.AddPart(Heads[WingDs.Count - 1]);
             }
         }
         else if (rnd == 1)
@@ -48,7 +53,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(WingDs[WingDs.Count-1]);
+                GridSystem.Instance.AddPart(WingDs[WingDs.Count - 1]);
             }
         }
         else if (rnd == 2)
@@ -59,7 +64,7 @@ public class GridManager : MonoBehaviour
             }
             else
             {
-                GridSystem.Instance.AddPart(Nozzles[WingDs.Count-1]);
+                GridSystem.Instance.AddPart(Nozzles[WingDs.Count - 1]);
             }
         }
         else if (rnd == 3)

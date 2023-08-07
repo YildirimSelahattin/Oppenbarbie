@@ -42,7 +42,7 @@ public class UIManager : MonoBehaviour
         });
         GameManager.Instance.ChangeCamera(moveCam, 20);
         SwerveMovement.Instance.GoStartPos();
-        MissileController.Instance.speed = 10;
-        SwerveMovement.Instance.speed = 10;
+        MissileController.Instance.speed = 12;
+        SwerveMovement.Instance.speed = 12;
     }
 }

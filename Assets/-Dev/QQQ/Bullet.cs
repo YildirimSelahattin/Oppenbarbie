@@ -38,11 +38,17 @@ public class Bullet : MonoBehaviour
             GameManager.Instance.ChangeCamera(GameManager.Instance.endCam, 50);
             StartCoroutine(DelayCam());
         }
+        if (other.CompareTag("Finish"))
+        {
+            UIManager.Instance.restartButon.SetActive(true);
+            Destroy(MissileController.Instance.target, .5f);
+            Destroy(gameObject, .5f);
+        }
     }
 
     public IEnumerator DelayCam()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2f);
         GameManager.Instance.endCam.LookAt = null;
         GameManager.Instance.endCam.Follow = null;
     }

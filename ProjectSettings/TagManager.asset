@@ -25,10 +25,10 @@ TagManager:
   - Draggings
   - DraggingBegan
   - DragLayer
-  - NonePhysics
+  - FrozenChunks
   - Mask
   - Masked
-  - 
+  - NonePhysics
   - 
   - 
   - 

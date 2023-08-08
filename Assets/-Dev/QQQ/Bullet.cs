@@ -29,6 +29,13 @@ public class Bullet : MonoBehaviour
             Destroy(MissileController.Instance.target);
             Destroy(gameObject);
         }
+
+        if (collision.transform.CompareTag("Node"))
+        {
+            UIManager.Instance.restartButon.SetActive(true);
+            Destroy(MissileController.Instance.target, 1f);
+            Destroy(gameObject, 1f);
+        }
     }
 
     void OnTriggerEnter(Collider other)

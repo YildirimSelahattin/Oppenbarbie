@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Project.Scripts.Fractures
 {
     public static class Fracture
-    {
+    {        
         public static ChunkGraphManager FractureGameObject(GameObject gameObject, Anchor anchor, int seed, int totalChunks,Material insideMaterial, Material outsideMaterial, float jointBreakForce, float density)
         {
             // Translate all meshes to one world mesh
@@ -45,8 +45,9 @@ namespace Project.Scripts.Fractures
             }
             // Graph manager freezes/unfreezes blocks depending on whether they are connected to the graph or not
             var graphManager = fractureGameObject.AddComponent<ChunkGraphManager>();
-            graphManager.Setup(fractureGameObject.GetComponentsInChildren<Rigidbody>());
             
+            graphManager.Setup(fractureGameObject.GetComponentsInChildren<Rigidbody>());
+            var saver = fractureGameObject.AddComponent<FractureSaver>();
             return graphManager;
         }
 

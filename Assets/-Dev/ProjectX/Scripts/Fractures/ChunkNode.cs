@@ -15,7 +15,7 @@ namespace Project.Scripts.Fractures
         private Vector3 frozenPos;
         private Quaternion forzenRot;
         private bool frozen;
-        public bool IsStatic => rb.isKinematic;
+        public bool IsStatic;
         public Color Color { get; set; } = Color.black;
         public bool HasBrokenLinks { get; private set; }
 
@@ -37,6 +37,7 @@ namespace Project.Scripts.Fractures
         public void Setup()
         {
             rb = GetComponent<Rigidbody>();
+            IsStatic = (rb.isKinematic)? true : false;
             Freeze();
 
             JointToChunk.Clear();

@@ -10,6 +10,11 @@ namespace Project.Scripts.Fractures
     {
         private ChunkNode[] nodes;
 
+        void Start()
+        {
+            Setup(gameObject.GetComponentsInChildren<Rigidbody>());
+        }
+
         public void Setup(Rigidbody[] bodies)
         {
             nodes = new ChunkNode[bodies.Length];

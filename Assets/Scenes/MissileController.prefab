@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 6367272381656179800}
   - component: {fileID: 1241062565430166079}
   - component: {fileID: 1241062565430166078}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv9_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 4655114383387871762}
   - component: {fileID: 1549995513109225084}
   - component: {fileID: 1549995513109225087}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv3_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -777,7 +777,7 @@ GameObject:
   - component: {fileID: 8373438388793792240}
   - component: {fileID: 5490699568443285777}
   - component: {fileID: 8950282962365551284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv10
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 375315844465184671}
   - component: {fileID: 375315844465184668}
   - component: {fileID: 375315844465184669}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv1_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 4421210361387589265}
   - component: {fileID: 1293271870915842171}
   - component: {fileID: 1293271870915842170}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv2_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 2618737201601707767}
   - component: {fileID: 988340880062360265}
   - component: {fileID: 988340880062360264}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv3_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1478,7 +1478,7 @@ GameObject:
   - component: {fileID: 1465030917719127955}
   - component: {fileID: 1465030917719127953}
   - component: {fileID: 1465030917719127952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv1_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 2809293160095027241}
   - component: {fileID: 862342289609940815}
   - component: {fileID: 862342289609940814}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv6_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 3863940137627156329}
   - component: {fileID: 462425623710065811}
   - component: {fileID: 462425623710065810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv7_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   - component: {fileID: 3878245089012338664}
   - component: {fileID: 4627035759559355851}
   - component: {fileID: 7967572955112386739}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv5
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 2379850234866146648}
   - component: {fileID: 1054876293598846447}
   - component: {fileID: 1054876293598846446}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv6_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -2885,7 +2885,7 @@ GameObject:
   - component: {fileID: 8728110345711228725}
   - component: {fileID: 3943190671764882542}
   - component: {fileID: 2284642511329701781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv2
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -3361,7 +3361,7 @@ GameObject:
   - component: {fileID: 6212363362616665912}
   - component: {fileID: 1522225550616245075}
   - component: {fileID: 1522225550616245074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv2_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -3530,7 +3530,7 @@ GameObject:
   - component: {fileID: 5523095394447487101}
   - component: {fileID: 1607632004462704259}
   - component: {fileID: 1607632004462704258}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv10_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -4094,7 +4094,7 @@ GameObject:
   - component: {fileID: 1497530145478704580}
   - component: {fileID: 1497530145478704578}
   - component: {fileID: 1497530145478704581}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv8_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -4207,7 +4207,7 @@ GameObject:
   - component: {fileID: 7140119938194843986}
   - component: {fileID: 7402944178214787343}
   - component: {fileID: 7875771924490653277}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv10
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -4399,7 +4399,7 @@ GameObject:
   - component: {fileID: 8318691647350942667}
   - component: {fileID: 1558243566611088909}
   - component: {fileID: 1558243566611088908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv4_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -4765,7 +4765,7 @@ GameObject:
   - component: {fileID: 672788531313868267}
   - component: {fileID: 2110013387426712441}
   - component: {fileID: 2110013387426712440}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv5_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -5306,7 +5306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5058923653475680987
 Transform:
   m_ObjectHideFlags: 0
@@ -5412,7 +5412,7 @@ GameObject:
   - component: {fileID: 2278528045838581552}
   - component: {fileID: 8422989437794870432}
   - component: {fileID: 6921918611531575195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv1
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -5604,7 +5604,7 @@ GameObject:
   - component: {fileID: 2054542088921437412}
   - component: {fileID: 5528269721357368489}
   - component: {fileID: 213898504443772941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv2
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -5712,7 +5712,7 @@ GameObject:
   - component: {fileID: 1511092133387417642}
   - component: {fileID: 1511092133387417640}
   - component: {fileID: 1511092133387417643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv6_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -6080,7 +6080,7 @@ GameObject:
   - component: {fileID: 791325150678431643}
   - component: {fileID: 6769366369964759622}
   - component: {fileID: 7866410407957383289}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv9
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -6442,7 +6442,7 @@ GameObject:
   - component: {fileID: 6406881131676042586}
   - component: {fileID: 2409737791190637219}
   - component: {fileID: 2409737791190637218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv7_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -6555,7 +6555,7 @@ GameObject:
   - component: {fileID: 7965873113004209152}
   - component: {fileID: 7656133025805549116}
   - component: {fileID: 2457150216473030496}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv7
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -6663,7 +6663,7 @@ GameObject:
   - component: {fileID: 8195250009132120125}
   - component: {fileID: 1882204443213598198}
   - component: {fileID: 1882204443213598185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv1_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -6776,7 +6776,7 @@ GameObject:
   - component: {fileID: 4991536595271034078}
   - component: {fileID: 1570479679455852446}
   - component: {fileID: 1570479679455852433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv1_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -6889,7 +6889,7 @@ GameObject:
   - component: {fileID: 694734556445714282}
   - component: {fileID: 694734556445714280}
   - component: {fileID: 694734556445714283}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv5_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -7200,7 +7200,7 @@ GameObject:
   - component: {fileID: 2127608301536408099}
   - component: {fileID: 6320475195612857507}
   - component: {fileID: 7729169997849589606}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv0
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -7694,7 +7694,7 @@ GameObject:
   - component: {fileID: 8516338512000210373}
   - component: {fileID: 3834965417948466695}
   - component: {fileID: 3834965417948466694}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv6_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -8003,7 +8003,7 @@ GameObject:
   - component: {fileID: 8788548377568248286}
   - component: {fileID: 2205044374740172315}
   - component: {fileID: 3029623384533836487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv8
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -8195,7 +8195,7 @@ GameObject:
   - component: {fileID: 3167121856917199057}
   - component: {fileID: 1734990362769252730}
   - component: {fileID: 1734990362769252733}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv7_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -8393,7 +8393,7 @@ GameObject:
   - component: {fileID: 2858467658577644398}
   - component: {fileID: 4440554275644943345}
   - component: {fileID: 4440554275644943344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv8_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -8507,7 +8507,7 @@ GameObject:
   - component: {fileID: 5198794557181864147}
   - component: {fileID: 1522579680783124762}
   - component: {fileID: 1522579680783124765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv9_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -8860,7 +8860,7 @@ GameObject:
   - component: {fileID: 9108698478032366619}
   - component: {fileID: 87320130831345198}
   - component: {fileID: 87320130831345185}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv2_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -9087,7 +9087,7 @@ GameObject:
   - component: {fileID: 1342056259182415058}
   - component: {fileID: 6015914325501880479}
   - component: {fileID: 7713244885173331030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv3
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -9363,7 +9363,7 @@ GameObject:
   - component: {fileID: 4357855313082862203}
   - component: {fileID: 3590476101037626743}
   - component: {fileID: 3590476101037626742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv5_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -9732,7 +9732,7 @@ GameObject:
   - component: {fileID: 3099979206967776769}
   - component: {fileID: 1289997187849375202}
   - component: {fileID: 1289997187849375205}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv8_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -10014,7 +10014,7 @@ GameObject:
   - component: {fileID: 5556848681095137458}
   - component: {fileID: 3129138119593310135}
   - component: {fileID: 3129138119593310134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv2_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -10212,7 +10212,7 @@ GameObject:
   - component: {fileID: 6071806643261130077}
   - component: {fileID: 2170328469837239863}
   - component: {fileID: 1147484173773813629}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv8
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -10602,7 +10602,7 @@ GameObject:
   - component: {fileID: 3551886776028758664}
   - component: {fileID: 1535458215673294848}
   - component: {fileID: 1535458215673294851}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv10_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -10715,7 +10715,7 @@ GameObject:
   - component: {fileID: 5922300535524624447}
   - component: {fileID: 3296606647307207849}
   - component: {fileID: 5256475019790725493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv6
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -10822,7 +10822,7 @@ GameObject:
   - component: {fileID: 6638009385470720212}
   - component: {fileID: 434892066952865244}
   - component: {fileID: 7682136783854704885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv4
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -10929,7 +10929,7 @@ GameObject:
   - component: {fileID: 2321413469731608278}
   - component: {fileID: 2084910138299128185}
   - component: {fileID: 8884718642957004868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv4
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -11121,7 +11121,7 @@ GameObject:
   - component: {fileID: 8793742264839210000}
   - component: {fileID: 8475968893108004136}
   - component: {fileID: 8091984333534923844}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv3
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -11399,7 +11399,7 @@ GameObject:
   - component: {fileID: 8687963608670169419}
   - component: {fileID: 6753959254058223273}
   - component: {fileID: 6753959254058223272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv10_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -11596,7 +11596,7 @@ GameObject:
   - component: {fileID: 8675577363620165585}
   - component: {fileID: 5981284181447757824}
   - component: {fileID: 4324679155652826787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv1
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -11872,7 +11872,7 @@ GameObject:
   - component: {fileID: 1528249125170000269}
   - component: {fileID: 1528249125170000267}
   - component: {fileID: 1528249125170000266}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv4_4
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -12070,7 +12070,7 @@ GameObject:
   - component: {fileID: 1865236188800776237}
   - component: {fileID: 1865236188800776235}
   - component: {fileID: 1865236188800776234}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv8_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -12519,7 +12519,7 @@ GameObject:
   - component: {fileID: 5250117128716867613}
   - component: {fileID: 9164309428911915411}
   - component: {fileID: 7083752406358539093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv6
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -12626,7 +12626,7 @@ GameObject:
   - component: {fileID: 8211171673915487352}
   - component: {fileID: 1047144949392883239}
   - component: {fileID: 4265669252178928232}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv7
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -12817,7 +12817,7 @@ GameObject:
   - component: {fileID: 1371659567256463781}
   - component: {fileID: 1371659567256463779}
   - component: {fileID: 1371659567256463778}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv3_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -13016,7 +13016,7 @@ GameObject:
   - component: {fileID: 4879734334410478377}
   - component: {fileID: 4542068250094108368}
   - component: {fileID: 4542068250094108371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv4_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -13518,7 +13518,7 @@ GameObject:
   - component: {fileID: 7701262902827023672}
   - component: {fileID: 7701262902827023675}
   - component: {fileID: 7701262902827023674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv0_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -13968,7 +13968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7701262903229316767
 Transform:
   m_ObjectHideFlags: 0
@@ -14074,7 +14074,7 @@ GameObject:
   - component: {fileID: 7701262903532422858}
   - component: {fileID: 7701262903532422861}
   - component: {fileID: 7701262903532422860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv0_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -14348,7 +14348,7 @@ GameObject:
   - component: {fileID: 7701262904395896971}
   - component: {fileID: 7701262904395896970}
   - component: {fileID: 7701262904395896973}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv1_0
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -14502,7 +14502,7 @@ GameObject:
   - component: {fileID: 7701262904469646193}
   - component: {fileID: 7701262904469646192}
   - component: {fileID: 7701262904469646195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv0_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -14700,7 +14700,7 @@ GameObject:
   - component: {fileID: 142572868097609107}
   - component: {fileID: 2168101615284651773}
   - component: {fileID: 2168101615284651772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv5_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -14897,7 +14897,7 @@ GameObject:
   - component: {fileID: 8144115850940943726}
   - component: {fileID: 4968679991368138518}
   - component: {fileID: 4968679991368138505}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv10_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -15179,7 +15179,7 @@ GameObject:
   - component: {fileID: 428106829672896302}
   - component: {fileID: 7247752847874049312}
   - component: {fileID: 5243344775815160092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv9
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -15287,7 +15287,7 @@ GameObject:
   - component: {fileID: 150718601964834884}
   - component: {fileID: 150718601964834882}
   - component: {fileID: 150718601964834885}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv4_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -15485,7 +15485,7 @@ GameObject:
   - component: {fileID: 1535324018377163510}
   - component: {fileID: 1535324018377163508}
   - component: {fileID: 1535324018377163511}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv9_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -15598,7 +15598,7 @@ GameObject:
   - component: {fileID: 7572222949836476848}
   - component: {fileID: 7794981499007990847}
   - component: {fileID: 546106007345465903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_d_lv0
   m_TagString: WingD
   m_Icon: {fileID: 0}
@@ -16295,7 +16295,7 @@ GameObject:
   - component: {fileID: 7088112874800907053}
   - component: {fileID: 3868241387672761783}
   - component: {fileID: 3868241387672761782}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv7_2
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -16494,7 +16494,7 @@ GameObject:
   - component: {fileID: 2426971133776798047}
   - component: {fileID: 2426971133776798045}
   - component: {fileID: 2426971133776798044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv9_3
   m_TagString: Nozzle
   m_Icon: {fileID: 0}
@@ -16692,7 +16692,7 @@ GameObject:
   - component: {fileID: 8872543029791532432}
   - component: {fileID: 3353642455019337495}
   - component: {fileID: 1279254457574686582}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: wing_u_lv5
   m_TagString: WingU
   m_Icon: {fileID: 0}
@@ -17083,7 +17083,7 @@ GameObject:
   - component: {fileID: 6976273652238369992}
   - component: {fileID: 464608052060703020}
   - component: {fileID: 464608052060703023}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: missile_lv3_1
   m_TagString: Nozzle
   m_Icon: {fileID: 0}

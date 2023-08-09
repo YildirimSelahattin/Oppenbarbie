@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MissileProperties : MonoBehaviour
+public class AttachedMissileProperties : MonoBehaviour
 {
     public enum NozzlePos { Left, Center, Right};
     public NozzlePos nozzlePosition;
@@ -17,5 +17,10 @@ public class MissileProperties : MonoBehaviour
     void Update()
     {
         
+    }
+    void OnMouseDown()
+    {
+        // this object was clicked - do something
+        Debug.Log("Pressed");
     }
 }

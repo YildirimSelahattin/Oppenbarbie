@@ -8,8 +8,9 @@ public class GridManager : MonoBehaviour
     public Button addPartBtn;
     public Button addLevelBtn; //
     public List<GameObject> Nozzles;
-    public List<GameObject> Wings;
+    public List<GameObject> WingDs;
     public List<GameObject> Heads;
+    public List<GameObject> WingUs;
 
     void Awake()
     {
@@ -21,44 +22,60 @@ public class GridManager : MonoBehaviour
 
     void Start()
     {
-        addPartBtn.onClick.AddListener(AddPart);
+        addPartBtn.onClick.AddListener(delegate { AddPart(10); });
+
         addLevelBtn.onClick.AddListener(AddLevel);
     }
 
-    public void AddPart()
+    public void AddPart(int rnd)
     {
-        int rnd = Random.Range(0, 3);
+        if (rnd == 10)
+        {
+            rnd = Random.Range(0, 4);
+        }
+
         if (rnd == 0)
         {
-            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            if (GameDataManager.Instance.currentLevel < WingDs.Count)
             {
                 GridSystem.Instance.AddPart(Heads[GameDataManager.Instance.currentLevel - 1]);
             }
             else
             {
-                GridSystem.Instance.AddPart(Heads[Wings.Count-1]);
+                GridSystem.Instance.AddPart(Heads[WingDs.Count - 1]);
             }
         }
         else if (rnd == 1)
         {
-            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            if (GameDataManager.Instance.currentLevel < WingDs.Count)
             {
-                GridSystem.Instance.AddPart(Wings[GameDataManager.Instance.currentLevel - 1]);
+                GridSystem.Instance.AddPart(WingDs[GameDataManager.Instance.currentLevel - 1]);
             }
             else
             {
-                GridSystem.Instance.AddPart(Wings[Wings.Count-1]);
+                GridSystem.Instance.AddPart(WingDs[WingDs.Count - 1]);
             }
         }
         else if (rnd == 2)
         {
-            if (GameDataManager.Instance.currentLevel < Wings.Count)
+            if (GameDataManager.Instance.currentLevel < WingDs.Count)
             {
                 GridSystem.Instance.AddPart(Nozzles[GameDataManager.Instance.currentLevel - 1]);
             }
             else
             {
-                GridSystem.Instance.AddPart(Nozzles[Wings.Count-1]);
+                GridSystem.Instance.AddPart(Nozzles[WingDs.Count - 1]);
+            }
+        }
+        else if (rnd == 3)
+        {
+            if (GameDataManager.Instance.currentLevel < WingDs.Count)
+            {
+                GridSystem.Instance.AddPart(WingUs[GameDataManager.Instance.currentLevel - 1]);
+            }
+            else
+            {
+                GridSystem.Instance.AddPart(WingUs[WingDs.Count - 1]);
             }
         }
     }

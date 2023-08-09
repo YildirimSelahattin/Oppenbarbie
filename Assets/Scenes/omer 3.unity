@@ -5937,7 +5937,7 @@ PrefabInstance:
     - target: {fileID: 2775100188233264814, guid: 66dd1fda08998bb4ea8a8e65c1dcf9a1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2775100188233264814, guid: 66dd1fda08998bb4ea8a8e65c1dcf9a1,
         type: 3}
@@ -6610,10 +6610,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followCam: {fileID: 6072692274111423213}
-  startCam: {fileID: 8712604477910570799}
+  startCam: {fileID: 0}
   endCam: {fileID: 4928456421152322206}
   missileSpawnParent: {fileID: 1248332281}
-  missillePrefab: {fileID: 4984856576763015200, guid: 32265635fdefdc849a35cbd561aff579,
+  missillePrefab: {fileID: 4984856576763015200, guid: 4d5d99bee9a295e418917ff19cdb1e4d,
     type: 3}
   targetPrefab: {fileID: 4223217055186405757, guid: 2ddfd135a256e9b4d8a34fd29984f13e,
     type: 3}
@@ -7165,7 +7165,7 @@ PrefabInstance:
     - target: {fileID: 4221837878722839265, guid: 7fd029fe45eb53045bdc06d1ed937b01,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4221837878722839265, guid: 7fd029fe45eb53045bdc06d1ed937b01,
         type: 3}

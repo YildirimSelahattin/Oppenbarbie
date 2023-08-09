@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public Button goButton;
     public Transform slots;
     public GameObject missile = null;
-    public GameObject trajectorySprite;
     public GameObject beforeLaunchPanel;
     public GameObject grid;
     public GameObject restartButon;
@@ -34,7 +33,6 @@ public class UIManager : MonoBehaviour
     {
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
-        trajectorySprite.SetActive(false);
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
             missile.transform.DOMoveZ(0, 0).OnComplete(()=>

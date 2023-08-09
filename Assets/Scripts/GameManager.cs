@@ -55,6 +55,5 @@ public class GameManager : MonoBehaviour
         endCam.Priority = 0;
         UIManager.Instance.beforeLaunchPanel.SetActive(true);
         UIManager.Instance.grid.SetActive(true);
-        UIManager.Instance.trajectorySprite.SetActive(true);
     }
 }

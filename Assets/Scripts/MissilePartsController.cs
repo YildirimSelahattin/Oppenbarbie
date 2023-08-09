@@ -15,6 +15,8 @@ public class MissilePartsController : MonoBehaviour
     public bool isRotate;
     private Color prevColor;
     public int maxLevel = 10;
+    public enum NozzlePosPrev { Left, Center, Right };
+    public NozzlePosPrev nozzlePosition;
 
     void OnTriggerEnter(Collider other)
     {

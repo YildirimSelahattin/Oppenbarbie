@@ -24,6 +24,7 @@ public class DragDropSystem : MonoBehaviour
     public GameObject grid;
     public GameObject lastClosedObject;
     public GameObject lastInstObject;
+
     void Awake()
     {
         if (Instance == null)
@@ -51,9 +52,25 @@ public class DragDropSystem : MonoBehaviour
                     if (touchedObject.GetComponent<AttachedMissileProperties>() != null && touchedObject.GetComponent<AttachedMissileProperties>().partLevel > 0)
                     {
                         lastClosedObject = touchedObject;
-                        touchedObject.SetActive(false);
                         lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(true);
+                        string pos = lastClosedObject.GetComponent<AttachedMissileProperties>().nozzlePosition.ToString();
+
+                        Debug.Log(lastClosedObject.GetComponent<AttachedMissileProperties>().nozzlePosition);
                         lastInstObject = InstantiatePart(lastClosedObject);
+                        switch (pos)
+                        {
+                            case "Left":
+                                lastInstObject.GetComponent<MissilePartsController>().nozzlePosition = MissilePartsController.NozzlePosPrev.Left;
+                                break;
+
+                            case "Center":
+                                lastInstObject.GetComponent<MissilePartsController>().nozzlePosition = MissilePartsController.NozzlePosPrev.Center;
+                                break;
+
+                            case "Right":
+                                lastInstObject.GetComponent<MissilePartsController>().nozzlePosition = MissilePartsController.NozzlePosPrev.Right;
+                                break;
+                        }
                         lastInstObject.transform.localScale = new Vector3(400 * 0.07f, 400 * 0.07f, 400 * 0.07f);
                         lastInstObject.transform.position = hit.point;
                         touchedObject = lastInstObject;
@@ -152,6 +169,7 @@ public class DragDropSystem : MonoBehaviour
 
                 case "Nozzle":
                     Debug.Log("WingsU " + partLevel);
+                   
                     return Instantiate(GridManager.Instance.Nozzles[partLevel - 1], grid.transform);
 
 

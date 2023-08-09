@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject beforeLaunchPanel;
     public GameObject grid;
     public GameObject restartButon;
+    public CinemachineVirtualCamera moveCam;
 
     void Awake()
     {
@@ -32,20 +33,21 @@ public class UIManager : MonoBehaviour
 
     public void DropBomb()
     {
+        foreach (Transform child in slots.transform)
+        {
+            child.transform.GetComponent<MeshRenderer>().enabled = false;
+        }
+
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
-            missile.transform.DOMoveZ(0, 0).OnComplete(()=>
-            {
-                MissileController.Instance.speed = 12;
-                SwerveMovement.Instance.speed = 12;
-            });
+            missile.transform.DOMoveZ(0, 0);
         });
-        GameManager.Instance.ChangeCamera(GameManager.Instance.followCam, 20);
+        GameManager.Instance.ChangeCamera(moveCam, 20);
         SwerveMovement.Instance.GoStartPos();
-        
-        
+        MissileController.Instance.speed = 10;
+        SwerveMovement.Instance.speed = 10;
     }
 }

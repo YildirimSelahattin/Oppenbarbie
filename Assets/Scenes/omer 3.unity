@@ -6610,7 +6610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followCam: {fileID: 6072692274111423213}
-  startCam: {fileID: 0}
+  startCam: {fileID: 8712604477910570799}
   endCam: {fileID: 4928456421152322206}
   missileSpawnParent: {fileID: 1248332281}
   missillePrefab: {fileID: 4984856576763015200, guid: 4d5d99bee9a295e418917ff19cdb1e4d,

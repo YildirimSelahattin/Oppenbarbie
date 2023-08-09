@@ -24,6 +24,7 @@ public class DragDropSystem : MonoBehaviour
     public GameObject grid;
     public GameObject lastClosedObject;
     public GameObject lastInstObject;
+
     void Awake()
     {
         if (Instance == null)
@@ -47,19 +48,25 @@ public class DragDropSystem : MonoBehaviour
                 {
                     touchedObject = hit.collider.gameObject;
 
-
+                    // Clicking on an already attached part on missile
                     if (touchedObject.GetComponent<AttachedMissileProperties>() != null && touchedObject.GetComponent<AttachedMissileProperties>().partLevel > 0)
                     {
                         lastClosedObject = touchedObject;
-                        touchedObject.SetActive(false);
                         lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(true);
-                        lastInstObject = InstantiatePart(partToInst: lastClosedObject);
+                        lastClosedObject.SetActive(false);
+                        lastInstObject = InstantiatePart(lastClosedObject);
+                        if (lastClosedObject.tag == "Nozzle")
+                        {
+                            TrajectoryController.Instance.CalculateNozzlesBalance(touchedObject.GetComponent<AttachedMissileProperties>().nozzlePosition.ToString(), -lastInstObject.GetComponent<MissilePartsController>().levelIndex);
+                        }
+
                         lastInstObject.transform.localScale = new Vector3(400 * 0.07f, 400 * 0.07f, 400 * 0.07f);
                         lastInstObject.transform.position = hit.point;
                         touchedObject = lastInstObject;
 
                     }
 
+                    // Clicking on a non attached part
                     else
                     {
                         touchedObjBasePos = hit.transform.localPosition;
@@ -67,7 +74,6 @@ public class DragDropSystem : MonoBehaviour
                         touchedObject.layer = LayerMask.NameToLayer("DraggingBegan");
                         touchedObjBaseColor = touchedObject.GetComponent<MeshRenderer>().material.color;
                     }
-                    
                 }
             }
 
@@ -103,13 +109,11 @@ public class DragDropSystem : MonoBehaviour
             {
                 if (touchedObject != null)
                 {
-                    Debug.LogError("ksadhgfasgfd");
-
+                    // Replace it to grid back
                     if (touchedObject.transform.parent.CompareTag("GridCell"))
                     {
                         touchedObject.GetComponent<MissilePartsController>().TouchEnded();
                         touchedObject = null;
-                        Debug.LogError("sadasgfd");
                     }
 
                     else
@@ -118,16 +122,20 @@ public class DragDropSystem : MonoBehaviour
                         {
                             touchedObject.GetComponent<MissilePartsController>().TouchEnded();
                             touchedObject = null;
-
-
                         }
+                        // Replace back the attached part
                         else
                         {
                             Destroy(lastInstObject);
+                            if (touchedObject.CompareTag("Nozzle"))
+                            {
+                                TrajectoryController.Instance.CalculateNozzlesBalance(lastClosedObject.GetComponent<AttachedMissileProperties>().nozzlePosition.ToString(), lastInstObject.GetComponent<MissilePartsController>().levelIndex);
+                            }
                             lastClosedObject.SetActive(true);
+                            lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(false);
                             touchedObject = null;
                         }
-                        
+
                     }
                 }
             }

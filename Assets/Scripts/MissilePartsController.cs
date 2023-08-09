@@ -14,6 +14,9 @@ public class MissilePartsController : MonoBehaviour
     public GameObject attachedToMissile;
     public bool isRotate;
     private Color prevColor;
+    public int maxLevel = 10;
+    public enum NozzlePosPrev { Default, Left, Center, Right };
+    public NozzlePosPrev nozzlePosition;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,20 +30,15 @@ public class MissilePartsController : MonoBehaviour
 
         if (other.CompareTag(gameObject.tag))
         {
-            Debug.Log("Hey");
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
-                Debug.Log("Hey1");
-
                 attachedToMissile = other.gameObject;
                 prevColor = attachedToMissile.GetComponent<MeshRenderer>().material.color;
                 attachedToMissile.GetComponent<MeshRenderer>().material.color = Color.magenta;
-                
             }
-            else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex && levelIndex != 5)
-            {
-                Debug.Log("Hey2");
 
+            else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex && levelIndex != maxLevel)
+            {
                 gameObject.GetComponent<MeshRenderer>().material.color = Color.green;
                 objectToMerge = other.gameObject;
             }
@@ -80,7 +78,6 @@ public class MissilePartsController : MonoBehaviour
         {
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
-                attachedToMissile.GetComponent<MeshRenderer>().material.color = prevColor;
                 attachedToMissile = null;
             }
             else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex)
@@ -88,10 +85,7 @@ public class MissilePartsController : MonoBehaviour
                 gameObject.GetComponent<MeshRenderer>().material.color = DragDropSystem.Instance.touchedObjBaseColor;
                 objectToMerge = null;
             }
-            else
-            {
-                attachedToMissile.GetComponent<MeshRenderer>().material.DOKill();
-            }
+
         }
 
         if (other.CompareTag("DeleteCell"))
@@ -153,15 +147,13 @@ public class MissilePartsController : MonoBehaviour
             // Attachment Without Merge
             if (attachedToMissile.GetComponent<AttachedMissileProperties>().partLevel < levelIndex)
             {
-                Debug.Log("upgrade");
-
+                MovePartToGrid();
                 UpgradeWithoutMerge();
             }
 
             // Attachment With Merge
             else if (attachedToMissile.GetComponent<AttachedMissileProperties>().partLevel == levelIndex)
             {
-                Debug.Log("equal");
                 UpgradeWithMerge();
             }
 
@@ -169,7 +161,7 @@ public class MissilePartsController : MonoBehaviour
             {
                 transform.localPosition = new Vector3(0, 2.5f, 0);
                 gridToSnap = null;
-            }    
+            }
         }
 
         else
@@ -212,7 +204,7 @@ public class MissilePartsController : MonoBehaviour
     // Attachment Without Merge
     void UpgradeWithoutMerge()
     {
-
+        attachedToMissile.GetComponent<MeshRenderer>().material.color = prevColor;
         // Nozzle Attachment Without Merge
         if (gameObject.CompareTag("Nozzle"))
         {
@@ -255,9 +247,46 @@ public class MissilePartsController : MonoBehaviour
 
     void AttachPart(int levelIndex)
     {
+        attachedToMissile.GetComponent<MeshRenderer>().material.color = prevColor;
         attachedToMissile.transform.parent.GetChild(levelIndex).gameObject.SetActive(true);
         attachedToMissile.SetActive(false);
         Destroy(gameObject);
+    }
+
+    void MovePartToGrid()
+    {
+
+        int partLevel = attachedToMissile.GetComponent<AttachedMissileProperties>().partLevel;
+        string lastTag = attachedToMissile.tag;
+        if (partLevel > 0)
+        {
+            switch (lastTag)
+            {
+                case "Head":
+                    Debug.Log("Head");
+                    GridSystem.Instance.AddPart(GridManager.Instance.Heads[partLevel - 1]);
+                    break;
+
+                case "WingU":
+                    Debug.Log("WingU");
+                    GridSystem.Instance.AddPart(GridManager.Instance.WingUs[partLevel - 1]);
+                    break;
+
+                case "Nozzle":
+                    Debug.Log("Nozzle");
+                    GridSystem.Instance.AddPart(GridManager.Instance.Nozzles[partLevel - 1]);
+                    break;
+
+                case "WingD":
+                    Debug.Log("WingD");
+                    GridSystem.Instance.AddPart(GridManager.Instance.WingDs[partLevel - 1]);
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
     }
 
 }

@@ -1372,8 +1372,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   touchedObject: {fileID: 0}
+  touchedRocketPart: {fileID: 0}
   isplaceable: 1
   touchedObjBaseColor: {r: 0, g: 0, b: 0, a: 0}
+  grid: {fileID: 0}
+  lastClosedObject: {fileID: 0}
+  lastInstObject: {fileID: 0}
 --- !u!4 &817816222
 Transform:
   m_ObjectHideFlags: 0
@@ -1429,18 +1433,14 @@ MonoBehaviour:
   - {fileID: 1683753171965648566, guid: b6c95f2625a4c234b8e1e14d4ec516d7, type: 3}
   - {fileID: 1683753171965648566, guid: d3ef8184e6a38c74bbd1d0b08e6bb30b, type: 3}
   - {fileID: 1683753171965648566, guid: 5d4b5cdf613c06548afe85cec23e4bb5, type: 3}
-  Wings:
-  - {fileID: 1683753171965648566, guid: 018a6e4b43ecdd64f874ddd67e0a4809, type: 3}
-  - {fileID: 1683753171965648566, guid: 0f977d5db13655244a6df813f91f5413, type: 3}
-  - {fileID: 1683753171965648566, guid: 2a4901b09b8118f4ba1d3d229b685633, type: 3}
-  - {fileID: 1683753171965648566, guid: 611c33af85f3e7b41bd7a357dcca370c, type: 3}
-  - {fileID: 1683753171965648566, guid: 8ecaa52addbdc2c4cb26464042da6a7c, type: 3}
+  WingDs: []
   Heads:
   - {fileID: 1683753171965648566, guid: fa3e6dba9807e88489893008993aad9b, type: 3}
   - {fileID: 1683753171965648566, guid: d6caa7e859192dc4cb80eba3ee457d2a, type: 3}
   - {fileID: 1683753171965648566, guid: d8922b55295a389438300c3401534c13, type: 3}
   - {fileID: 1683753171965648566, guid: af35d1ed9e5ca4b47b036d366a90919d, type: 3}
   - {fileID: 1683753171965648566, guid: 1c4e928207360c444a83e8c61a36c7e7, type: 3}
+  WingUs: []
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followCam: {fileID: 311177154}
-  startCam: {fileID: 8292338431399802075}
   endCam: {fileID: 2132058726}
   missileSpawnParent: {fileID: 1248332281}
   missillePrefab: {fileID: 4984856576763015200, guid: c56fe5c801cabf644bc5198026ab8cc8,
@@ -2608,19 +2607,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1490068667 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3359049876982559558, guid: 31262db7efd37ac4dac6c1f021ac52c4,
-    type: 3}
-  m_PrefabInstance: {fileID: 2033222359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1490068668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1490068667}
+  m_GameObject: {fileID: 3359049875524022673}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: caf8cd8b1aaf9304ab2e5ba5c7c236f3, type: 3}
@@ -11674,6 +11667,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &3359049875524022673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3359049876982559558, guid: 31262db7efd37ac4dac6c1f021ac52c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2033222359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3979868941727048594
 MonoBehaviour:
   m_ObjectHideFlags: 3

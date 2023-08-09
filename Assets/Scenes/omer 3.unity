@@ -5623,6 +5623,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 623670154}
+  - component: {fileID: 623670155}
   m_Layer: 0
   m_Name: GameDataManager
   m_TagString: Untagged
@@ -5645,6 +5646,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &623670155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623670152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86280db83d8984a4f8fd42e400b53922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  incomePer: 1
+  currentLevel: 1
+  highestLevel: 0
+  uiClickSound: {fileID: 0}
+  sauceSound: {fileID: 0}
+  goldSound: {fileID: 0}
+  iceCreamShot: {fileID: 0}
+  splatSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  playSound: 0
+  playMusic: 0
+  playVibrate: 0
 --- !u!1 &627353297
 GameObject:
   m_ObjectHideFlags: 0
@@ -6588,7 +6613,7 @@ MonoBehaviour:
   startCam: {fileID: 8712604477910570799}
   endCam: {fileID: 4928456421152322206}
   missileSpawnParent: {fileID: 1248332281}
-  missillePrefab: {fileID: 4984856576763015200, guid: c56fe5c801cabf644bc5198026ab8cc8,
+  missillePrefab: {fileID: 4984856576763015200, guid: 32265635fdefdc849a35cbd561aff579,
     type: 3}
   targetPrefab: {fileID: 4223217055186405757, guid: 2ddfd135a256e9b4d8a34fd29984f13e,
     type: 3}

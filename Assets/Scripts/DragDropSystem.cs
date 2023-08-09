@@ -47,19 +47,20 @@ public class DragDropSystem : MonoBehaviour
                 {
                     touchedObject = hit.collider.gameObject;
 
-
+                    // Clicking on an already attached part on missile
                     if (touchedObject.GetComponent<AttachedMissileProperties>() != null && touchedObject.GetComponent<AttachedMissileProperties>().partLevel > 0)
                     {
                         lastClosedObject = touchedObject;
                         touchedObject.SetActive(false);
                         lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(true);
-                        lastInstObject = InstantiatePart(partToInst: lastClosedObject);
+                        lastInstObject = InstantiatePart(lastClosedObject);
                         lastInstObject.transform.localScale = new Vector3(400 * 0.07f, 400 * 0.07f, 400 * 0.07f);
                         lastInstObject.transform.position = hit.point;
                         touchedObject = lastInstObject;
 
                     }
 
+                    // Clicking on a non attached part
                     else
                     {
                         touchedObjBasePos = hit.transform.localPosition;
@@ -103,13 +104,11 @@ public class DragDropSystem : MonoBehaviour
             {
                 if (touchedObject != null)
                 {
-                    Debug.LogError("ksadhgfasgfd");
-
+                    // Replace it to grid back
                     if (touchedObject.transform.parent.CompareTag("GridCell"))
                     {
                         touchedObject.GetComponent<MissilePartsController>().TouchEnded();
                         touchedObject = null;
-                        Debug.LogError("sadasgfd");
                     }
 
                     else
@@ -118,13 +117,13 @@ public class DragDropSystem : MonoBehaviour
                         {
                             touchedObject.GetComponent<MissilePartsController>().TouchEnded();
                             touchedObject = null;
-
-
                         }
+                        // Replace back the attached part
                         else
                         {
                             Destroy(lastInstObject);
                             lastClosedObject.SetActive(true);
+                            lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(false);
                             touchedObject = null;
                         }
                         
@@ -143,21 +142,21 @@ public class DragDropSystem : MonoBehaviour
             switch (lastTag)
             {
                 case "Head":
-                    Debug.Log("Head" + partLevel);
+                    Debug.Log("Head " + partLevel);
                 return Instantiate(GridManager.Instance.Heads[partLevel - 1], grid.transform);
 
                 case "WingU":
-                    Debug.Log("WingU");
+                    Debug.Log("WingU " + partLevel);
                     return Instantiate(GridManager.Instance.WingUs[partLevel - 1], grid.transform);
 
 
                 case "Nozzle":
-                    Debug.Log("WingsU");
+                    Debug.Log("WingsU " + partLevel);
                     return Instantiate(GridManager.Instance.Nozzles[partLevel - 1], grid.transform);
 
 
                 case "WingD":
-                    Debug.Log("WingD");
+                    Debug.Log("WingD " + partLevel);
                     return Instantiate(GridManager.Instance.WingDs[partLevel - 1], grid.transform);
 
                 default:

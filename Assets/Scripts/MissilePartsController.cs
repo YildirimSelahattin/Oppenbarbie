@@ -15,6 +15,8 @@ public class MissilePartsController : MonoBehaviour
     public bool isRotate;
     private Color prevColor;
     public int maxLevel = 10;
+    public enum NozzlePosPrev { Default, Left, Center, Right };
+    public NozzlePosPrev nozzlePosition;
 
     void OnTriggerEnter(Collider other)
     {
@@ -76,7 +78,6 @@ public class MissilePartsController : MonoBehaviour
         {
             if (other.gameObject.GetComponent<MissilePartsController>() == null)
             {
-                attachedToMissile.GetComponent<MeshRenderer>().material.color = prevColor;
                 attachedToMissile = null;
             }
             else if (other.gameObject.GetComponent<MissilePartsController>().levelIndex == levelIndex)
@@ -155,12 +156,12 @@ public class MissilePartsController : MonoBehaviour
             {
                 UpgradeWithMerge();
             }
-            
+
             else
             {
                 transform.localPosition = new Vector3(0, 2.5f, 0);
                 gridToSnap = null;
-            }    
+            }
         }
 
         else

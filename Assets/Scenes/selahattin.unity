@@ -1308,6 +1308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173bcaf702628f84fa7b7eac4947c3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flyingNodeMat: []
+  nodes: 0
 --- !u!1001 &736810903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2183,6 +2185,7 @@ MonoBehaviour:
   targetPrefab: {fileID: 4223217055186405757, guid: 2ddfd135a256e9b4d8a34fd29984f13e,
     type: 3}
   missile: {fileID: 0}
+  explosionSphere: {fileID: 0}
 --- !u!4 &1304584168
 Transform:
   m_ObjectHideFlags: 0
@@ -2599,7 +2602,6 @@ MonoBehaviour:
   beforeLaunchPanel: {fileID: 1250086382}
   grid: {fileID: 2101425235}
   restartButon: {fileID: 1078588898}
-  moveCam: {fileID: 311177154}
 --- !u!4 &1381573031
 Transform:
   m_ObjectHideFlags: 0

@@ -39,7 +39,8 @@ public class Bullet : MonoBehaviour
 
     public IEnumerator Explosion()
     {
-        yield return new WaitForSeconds(0.5f);
+        GameManager.Instance.explosionEffect.SetActive(true);
+        yield return new WaitForSeconds(0.8f);
         GameManager.Instance.explosionSphere.SetActive(true);
     }
 }

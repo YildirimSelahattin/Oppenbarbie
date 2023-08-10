@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
 
     //
     int explosionRadius = 0;
+    float explosionEffectScale = 0;
 
     void Awake()
     {
@@ -36,13 +37,15 @@ public class UIManager : MonoBehaviour
     public void DropBomb()
     {
         explosionRadius += 3;
+        explosionEffectScale += .33f;
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);
         GameManager.Instance.explosionSphere.GetComponent<SphereCollider>().radius = explosionRadius;
+        GameManager.Instance.explosionEffect.transform.localScale = new Vector3(explosionEffectScale, explosionEffectScale, explosionEffectScale);
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
-            missile.transform.DOMoveZ(0, 0).OnComplete(()=>
+            missile.transform.DOMoveZ(0, 0).OnComplete(() =>
             {
                 MissileController.Instance.speed = 12;
                 SwerveMovement.Instance.speed = 12;

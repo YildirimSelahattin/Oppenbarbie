@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
         if (collision.transform.CompareTag("Node"))
         {
             UIManager.Instance.restartButon.SetActive(true);
+            StartCoroutine(Explosion());
             Destroy(MissileController.Instance.target, 1f);
             Destroy(gameObject, 1f);
         }
@@ -38,6 +39,12 @@ public class Bullet : MonoBehaviour
         yield return new WaitForSeconds(2f);
         GameManager.Instance.endCam.LookAt = null;
         GameManager.Instance.endCam.Follow = null;
+    }
+
+    public IEnumerator Explosion()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UIManager.Instance.explosionSphere.SetActive(true);
     }
 
     public void SetDir(Vector3 _dir)

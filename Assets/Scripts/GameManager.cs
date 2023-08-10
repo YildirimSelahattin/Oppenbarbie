@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject missile;
     public GameObject explosionSphere;
     public GameObject explosionEffect;
+    public GameObject jetVFX;
 
     void Awake()
     {
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.missile = missileSpawnParent.transform.GetChild(0).gameObject;
         explosionSphere = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount - 1).gameObject;
         explosionEffect = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount - 2).gameObject;
+        jetVFX = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount - 3).gameObject;
         followCam.LookAt = missile.transform;
         startCam.LookAt = missile.transform;
         //endCam.LookAt = missile.transform;

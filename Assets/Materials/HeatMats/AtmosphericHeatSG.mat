@@ -39,14 +39,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EnginePower: 0.5
-    - _JiggleStrength: 1.5
+    - _EnginePower: 1
+    - _JiggleStrength: 2
     - _NoiseSpeed: 1
     - _NoiseTiling: 1
     - _Pulses: 4
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Thrust: 0.5
+    - _Thrust: 0
     - _eee: 1
     m_Colors:
     - _Color: {r: 11.984314, g: 0.627451, b: 0, a: 1}

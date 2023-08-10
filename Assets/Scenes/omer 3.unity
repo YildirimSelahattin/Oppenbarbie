@@ -6600,6 +6600,7 @@ MonoBehaviour:
     type: 3}
   missile: {fileID: 0}
   explosionSphere: {fileID: 0}
+  explosionEffect: {fileID: 0}
 --- !u!4 &1304584168
 Transform:
   m_ObjectHideFlags: 0
@@ -7448,7 +7449,7 @@ PrefabInstance:
     - target: {fileID: 4832759376520351520, guid: a7fc430c9587d354e88c495bb26696dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4832759376520351520, guid: a7fc430c9587d354e88c495bb26696dd,
         type: 3}

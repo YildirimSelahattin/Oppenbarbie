@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
     {
         explosionRadius += 3;
         explosionEffectScale += .33f;
+        GameManager.Instance.jetVFX.GetComponent<MeshRenderer>().material.DOFloat(.7f, "_Thrust", 8f);
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);

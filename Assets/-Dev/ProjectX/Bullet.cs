@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _radiusExplosion;
-    //[SerializeField] private GameObject _explosionSound;
-    private Vector3 dir;
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Node"))
@@ -45,10 +41,5 @@ public class Bullet : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         GameManager.Instance.explosionSphere.SetActive(true);
-    }
-
-    public void SetDir(Vector3 _dir)
-    {
-        dir = _dir;
     }
 }

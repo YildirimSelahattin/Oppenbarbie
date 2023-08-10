@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     public GameObject grid;
     public GameObject restartButon;
 
+    //
+    int explosionRadius = 0;
+
     void Awake()
     {
         if (Instance == null)
@@ -32,10 +35,11 @@ public class UIManager : MonoBehaviour
 
     public void DropBomb()
     {
+        explosionRadius += 3;
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);
-        GameManager.Instance.explosionSphere.GetComponent<SphereCollider>().radius = 10;
+        GameManager.Instance.explosionSphere.GetComponent<SphereCollider>().radius = explosionRadius;
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
             missile.transform.DOMoveZ(0, 0).OnComplete(()=>
@@ -46,7 +50,5 @@ public class UIManager : MonoBehaviour
         });
         GameManager.Instance.ChangeCamera(GameManager.Instance.followCam, 20);
         SwerveMovement.Instance.GoStartPos();
-        
-        
     }
 }

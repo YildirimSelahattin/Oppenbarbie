@@ -27,6 +27,6 @@ public class MeshAssigner : MonoBehaviour
     public IEnumerator Delay()
     {
         yield return new WaitForSeconds(5);
-        //UnityEditor.PrefabUtility.SaveAsPrefabAsset(gameObject, "Assets/Prefabs/MyPrefab.prefab");
+        //UnityEditor.PrefabUtility.SaveAsPrefabAsset(gameObject, "Assets/Prefabs/Planet2.prefab");
     }
 }

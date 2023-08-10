@@ -48,10 +48,10 @@ public class GameManager : MonoBehaviour
         explosionSphere = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount -1).gameObject;
         followCam.LookAt = missile.transform;
         startCam.LookAt = missile.transform;
-        endCam.LookAt = missile.transform;
+        //endCam.LookAt = missile.transform;
         followCam.Follow = missile.transform;
         startCam.Follow = missile.transform;
-        endCam.Follow = missile.transform;
+        //endCam.Follow = missile.transform;
         followCam.Priority = 5;
         startCam.Priority = 10;
         endCam.Priority = 0;

@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/selahattin.unity
-    guid: d69411e6af6b8f8408963dbfdcac6456
+    path: Assets/Scenes/omer 3.unity
+    guid: fc821eaebf98fac47b60cd0e1218ef0f
   m_configObjects: {}

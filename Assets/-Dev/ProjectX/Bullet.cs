@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
     public IEnumerator Explosion()
     {
         yield return new WaitForSeconds(0.5f);
-        UIManager.Instance.explosionSphere.SetActive(true);
+        GameManager.Instance.explosionSphere.SetActive(true);
     }
 
     public void SetDir(Vector3 _dir)

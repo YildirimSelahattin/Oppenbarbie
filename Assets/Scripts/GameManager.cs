@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject missillePrefab;
     public GameObject targetPrefab;
     public GameObject missile;
+    public GameObject explosionSphere;
 
     void Awake()
     {
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         missile = Instantiate(missillePrefab, missileSpawnParent.transform);
         UIManager.Instance.missile = missileSpawnParent.transform.GetChild(0).gameObject;
-        UIManager.Instance.explosionSphere = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount -1).gameObject;
+        explosionSphere = missileSpawnParent.transform.GetChild(0).transform.GetChild(missileSpawnParent.transform.GetChild(0).childCount -1).gameObject;
         followCam.LookAt = missile.transform;
         startCam.LookAt = missile.transform;
         endCam.LookAt = missile.transform;

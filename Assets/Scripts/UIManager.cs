@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
     public GameObject beforeLaunchPanel;
     public GameObject grid;
     public GameObject restartButon;
-    public GameObject explosionSphere;
 
     void Awake()
     {
@@ -36,7 +35,7 @@ public class UIManager : MonoBehaviour
         beforeLaunchPanel.SetActive(false);
         grid.SetActive(false);
         trajectorySprite.SetActive(false);
-        explosionSphere.GetComponent<SphereCollider>().radius = 10;
+        GameManager.Instance.explosionSphere.GetComponent<SphereCollider>().radius = 10;
         missile.transform.DORotate(new Vector3(0, -180, 0), 2).OnUpdate(() =>
         {
             missile.transform.DOMoveZ(0, 0).OnComplete(()=>

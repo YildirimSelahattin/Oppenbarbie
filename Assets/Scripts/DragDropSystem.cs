@@ -25,6 +25,15 @@ public class DragDropSystem : MonoBehaviour
     public GameObject lastClosedObject;
     public GameObject lastInstObject;
 
+    public Material redMat;
+    public GameObject[] player;
+
+    public GameObject[] playered;
+    public Material[] Asmaterials;
+
+    public List<Material[]> prevMats = new();
+
+
     void Awake()
     {
         if (Instance == null)
@@ -35,6 +44,7 @@ public class DragDropSystem : MonoBehaviour
 
     void Update()
     {
+
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -54,9 +64,11 @@ public class DragDropSystem : MonoBehaviour
                         lastClosedObject = touchedObject;
                         lastClosedObject.transform.parent.GetChild(0).gameObject.SetActive(true);
                         lastClosedObject.SetActive(false);
+                        ChangeObjectColors();
                         lastInstObject = InstantiatePart(lastClosedObject);
                         if (lastClosedObject.tag == "Nozzle")
                         {
+                            
                             TrajectoryController.Instance.CalculateNozzlesBalance(touchedObject.GetComponent<AttachedMissileProperties>().nozzlePosition.ToString(), -lastInstObject.GetComponent<MissilePartsController>().levelIndex);
                         }
 
@@ -69,6 +81,7 @@ public class DragDropSystem : MonoBehaviour
                     // Clicking on a non attached part
                     else
                     {
+                        ChangeObjectColors();
                         touchedObjBasePos = hit.transform.localPosition;
                         touchedObjObjBaseRot = hit.transform.rotation.eulerAngles;
                         touchedObject.layer = LayerMask.NameToLayer("DraggingBegan");
@@ -109,6 +122,7 @@ public class DragDropSystem : MonoBehaviour
             {
                 if (touchedObject != null)
                 {
+                    ChangeColorsBack();
                     // Replace it to grid back
                     if (touchedObject.transform.parent.CompareTag("GridCell"))
                     {
@@ -178,5 +192,48 @@ public class DragDropSystem : MonoBehaviour
         {
             return null;
         }
+    }
+
+    public void ChangeObjectColors()
+    {
+        Debug.Log("Worked");
+
+        playered = GameObject.FindGameObjectsWithTag("Head");
+        Debug.Log(playered.Length + "playered");
+        foreach (GameObject obj in playered)
+        {
+            int i = 0;
+            Asmaterials =  obj.GetComponent<MeshRenderer>().materials;
+            Material[] Basmaterials = obj.GetComponent<MeshRenderer>().materials;
+            prevMats.Add(Asmaterials);
+            foreach(Material mat in Basmaterials)
+            {
+
+                Basmaterials[i] = redMat;
+                i++;
+            }
+
+            obj.GetComponent<MeshRenderer>().materials = Basmaterials;
+        }
+    }
+
+    public void ChangeColorsBack()
+    {
+        foreach (var x in prevMats)
+        {
+            foreach (var y in x)
+            {
+                Debug.Log(y.ToString() + "prevS");
+            }
+        }
+
+        int i = 0;
+        foreach (GameObject obj in playered)
+        {
+            obj.GetComponent<MeshRenderer>().materials = (prevMats[i]);
+
+            i++;
+        }
+        playered = null;
     }
 }

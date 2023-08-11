@@ -6041,6 +6041,8 @@ MonoBehaviour:
   grid: {fileID: 2101425235}
   lastClosedObject: {fileID: 0}
   lastInstObject: {fileID: 0}
+  redMat: {fileID: 2100000, guid: 470a13a7d2a06bd49bcfd1db779e32f7, type: 2}
+  player: []
 --- !u!4 &817816222
 Transform:
   m_ObjectHideFlags: 0
